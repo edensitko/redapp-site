@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://red-website-d46b9.web.app
+
+# Sitemaps
+Sitemap: https://red-website-d46b9.web.app/sitemap.xml

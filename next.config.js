@@ -4,13 +4,32 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: ['redapp.co.il', 'red-softwares.com', 'images.unsplash.com'],
+    domains: [
+      'redapp.co.il', 
+      'red-softwares.com', 
+      'images.unsplash.com',
+      'plus.unsplash.com',
+      'img.freepik.com',
+      'images.pexels.com'
+    ],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: '**.unsplash.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.freepik.com'
+      },
+      {
+        protocol: 'https',
+        hostname: '**.pexels.com'
+      }
     ],
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200],

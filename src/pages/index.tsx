@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           'פיתוח אפליקציות בישראל'
         ]}
       />
-      <main className="bg-white dark:bg-gray-900">
+      <main className="min-h-screen bg-white dark:bg-[rgb(26,27,27)]">
         <Hero />
         <CallToAction />
         <About />

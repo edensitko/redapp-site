@@ -34,15 +34,9 @@ const CallToAction: React.FC = () => {
             {/* Decorative Elements */}
             <div className="absolute inset-0 bg-grid-primary-700/[0.05] bg-[size:20px_20px]" />
             <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent dark:from-primary-400/5" />
-            <div className="absolute top-0 right-1/2 translate-x-1/2 h-1 w-32 bg-gradient-to-r from-transparent via-primary-500 to-transparent opacity-50" />
             
             <div className="relative px-6 py-12 sm:px-12 lg:px-16">
               <div className="max-w-5xl mx-auto text-center">
-                <div className="inline-flex items-center justify-center p-2 px-4 mb-6 rounded-full bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-800">
-                  <FaRocket className="w-4 h-4 ml-2" />
-                  <span className="text-sm font-medium">מתחילים תוך 24 שעות</span>
-                </div>
-                
                 <motion.h2
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -96,9 +90,7 @@ const CallToAction: React.FC = () => {
                       קבל הצעת מחיר
                     </motion.button>
                   </form>
-                  <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                    אנחנו נחזור אליכם תוך 24 שעות עם תוכנית מפורטת ומחיר מדויק 🚀
-                  </p>
+                  <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">                   </p>
                 </motion.div>
               </div>
             </div>

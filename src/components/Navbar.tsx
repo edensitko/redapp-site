@@ -11,7 +11,7 @@ interface NavbarProps {
 
 const navLinks = [
   { name: 'בית', href: '/', label: 'בית' },
-  { name: 'שירותים', href: '#services', label: 'שירותים' },
+  { name: 'שירותים', href: '/services', label: 'שירותים' },
   { name: 'פרויקטים', href: '#projects', label: 'פרויקטים' },
   { name: 'תמחור', href: '#pricing', label: 'תמחור' },
   { name: 'בלוג', href: '/blog', label: 'בלוג' },
@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                     key={link.href}
                     href={link.href}
                     className="text-gray-800 dark:text-gray-300 hover:text-primary-600 
-                    dark:hover:text-primary-400 transition-colors duration-200 text-sm font-medium"
+                    dark:hover:text-primary-400 transition-colors duration-200 text-lg font-medium"
                   >
                     {link.name}
                   </Link>

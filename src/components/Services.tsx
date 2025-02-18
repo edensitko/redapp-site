@@ -49,38 +49,17 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900" dir="rtl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-white dark:bg-[rgb(26,27,27)]" dir="rtl" id="services">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center justify-center px-4 py-1.5 mb-4 rounded-full bg-primary-50 dark:bg-primary-900/30"
-          >
-            <span className="text-sm font-medium text-primary-600 dark:text-primary-400">
-              הפתרונות שלנו
-            </span>
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
-          >
-            השירותים המקצועיים שלנו
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 dark:text-gray-300"
-          >
-            אנחנו מציעים מגוון רחב של שירותי פיתוח ופתרונות טכנולוגיים מתקדמים
-          </motion.p>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
+            השירותים שלנו
+          </h2>
+          <div className="w-[200px] h-1.5 bg-gradient-to-r from-primary-700 to-red-300 rounded-full mx-auto mb-2" />
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            פתרונות מקצועיים המותאמים לצרכים שלכם
+          </p>
         </div>
 
         {/* Services Grid */}
@@ -92,7 +71,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
+              className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-[rgb(46,47,47)]"
             >
               {/* Gradient Background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />

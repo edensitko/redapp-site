@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              אודות RED
+              אודות Redapp
             </motion.h1>
             <motion.p 
               className="text-lg text-gray-600 leading-relaxed"
@@ -124,7 +124,7 @@ const AboutPage: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="mb-6 relative">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -inset-2 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="relative flex items-center justify-center w-16 h-16
                                bg-gradient-to-br from-white/80 to-white/40
                                backdrop-blur-sm

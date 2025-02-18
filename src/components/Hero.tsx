@@ -28,13 +28,13 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8 }}
         >
           {/* Main Title */}
-          <motion.h1 
-            className={`${textStyles.sectionTitle} max-w-4xl mx-auto mb-6 bg-clip-text text-transparent bg-gradient-to-r dark:from-red-300 dark:to-red-500 from-red-700 to-red-900`}
+          <motion.h1
+            className="text-4xl sm:text-4xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-300 dark:to-primary-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            בית תוכנה שדואג לך טכנולוגית 
+            מובילים את המהפכה הדיגיטלית שלך - פיתוח בסטנדרט חדש
           </motion.h1>
 
           {/* Subtitle */}
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <motion.button
-              className={`group relative px-8 py-4 text-lg font-medium bg-gradient-to-r from-red-600 to-red-500 text-white rounded-xl 
+              className={`group relative px-8 py-4 text-lg font-medium bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl 
                 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200
                 before:absolute before:inset-0 before:bg-white before:origin-bottom before:scale-y-0 before:transition-transform
                 before:duration-300 before:hover:scale-y-100 before:rounded-xl overflow-hidden`}
@@ -65,13 +65,13 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <span className="relative z-10 group-hover:text-red-600 transition-colors duration-200">
+              <span className="relative z-10 group-hover:text-primary-600 transition-colors duration-200">
                 צור קשר
               </span>
             </motion.button>
             <motion.button
-              className={`group relative px-8 py-4 text-lg font-medium border-2 border-red-600 text-red-600 dark:text-white 
-                rounded-xl hover:bg-red-50 dark:hover:bg-red-900/10 transform hover:-translate-y-1 transition-all duration-200`}
+              className={`group relative px-8 py-4 text-lg font-medium border-2 border-primary-600 text-primary-600 dark:text-white 
+                rounded-xl hover:bg-primary-50 dark:hover:bg-primary-900/10 transform hover:-translate-y-1 transition-all duration-200`}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}

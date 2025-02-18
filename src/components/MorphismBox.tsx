@@ -27,7 +27,7 @@ const MorphismBox: React.FC<MorphismBoxProps> = ({ children, className = '' }) =
                     shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)]
                     overflow-hidden">
         {/* Frosted glass effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-purple-500/5" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-purple-500/5" />
         
         {/* Content */}
         <div className="relative py-24 overflow-hidden">

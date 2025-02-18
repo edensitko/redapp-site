@@ -37,7 +37,7 @@ const BlogPost: FC<BlogPostProps> = ({ post }) => {
         <article className="bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-white/60 shadow-lg">
           {/* Header */}
           <header className="mb-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-4">{post.title}</h1>
             
             <div className="flex flex-wrap gap-4 text-gray-600">
               <div className="flex items-center">
@@ -61,6 +61,10 @@ const BlogPost: FC<BlogPostProps> = ({ post }) => {
                 className="object-cover rounded-xl"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               />
+              {/* Dark overlay with light center */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/70 to-transparent" />
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-black/40 to-transparent" />
+              <div className="absolute inset-0 rounded-xl bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)]" />
             </div>
           )}
 

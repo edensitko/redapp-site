@@ -101,27 +101,36 @@ const Features: React.FC = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.div
-            viewport={{ once: true }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-block px-6 py-2 mb-6 rounded-full 
-                     bg-white/40 backdrop-blur-sm
-                     border border-white/60 shadow-sm"
-          >
-            <span className="text-lg font-medium bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
-              היתרונות שלנו
-            </span>
-          </motion.div>
-          
-          <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
-            למה לבחור בנו?
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
+            היתרונות שלנו
           </h2>
+          <div className="w-[200px] h-1.5 bg-gradient-to-r from-primary-700 to-red-300 rounded-full mx-auto mb-2" />
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            אנחנו מספקים פתרונות דיגיטליים מתקדמים שעוזרים לעסקים להצליח
+            למה לבחור בנו? הנה כמה סיבות טובות
           </p>
         </div>
+          
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="inline-block px-6 py-2 mb-6 rounded-full 
+                   bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm
+                   border border-gray-200 dark:border-gray-700 
+                   shadow-sm hover:shadow-md transition-shadow
+                   dark:shadow-gray-800/30"
+        >
+          <span className="text-lg font-medium bg-gradient-to-r from-primary-600 to-red-500 bg-clip-text text-transparent">
+            יתרונות
+          </span>
+        </motion.div>
+        <h2 className="text-4xl lg:text-5xl font-black mb-6 text-gray-900">
+          למה לבחור בנו?
+        </h2>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          אנחנו מספקים פתרונות דיגיטליים מתקדמים שעוזרים לעסקים להצליח
+        </p>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

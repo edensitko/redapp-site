@@ -33,62 +33,80 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900" dir="rtl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            שאלות נפוצות
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            מצאו תשובות לשאלות הנפוצות ביותר על השירותים שלנו
-          </p>
-        </motion.div>
-
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
+    <section className="py-20 bg-gray-50 dark:bg-[rgb(26,27,27)]" dir="rtl" id="faq">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
             <motion.div
-              key={index}
+              viewport={{ once: true }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="inline-block px-6 py-2 mb-6 rounded-full 
+                       bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm
+                       border border-gray-200 dark:border-gray-700 
+                       shadow-sm hover:shadow-md transition-shadow
+                       dark:shadow-gray-800/30"
             >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-right bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-4 transition-colors duration-200"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {faq.question}
-                  </span>
-                  <span className="text-primary-500 dark:text-primary-400">
-                    {openIndex === index ? <FaMinus /> : <FaPlus />}
-                  </span>
-                </div>
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <p className="mt-4 text-gray-600 dark:text-gray-300">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </button>
+              <span className="text-lg font-medium bg-gradient-to-r from-primary-600 to-red-500 bg-clip-text text-transparent">
+                שאלות נפוצות
+              </span>
             </motion.div>
-          ))}
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
+              שאלות נפוצות
+            </h2>
+            <div className="w-[200px] h-1.5 bg-gradient-to-r from-primary-700 to-red-300 rounded-full mx-auto mb-2" />
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              מצאו תשובות לשאלות הנפוצות ביותר
+            </p>
+          </motion.div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="mb-4"
+              >
+                <button
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  className="w-full bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-6 shadow-lg border border-gray-100 dark:border-[rgb(46,47,47)] text-right"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {faq.question}
+                    </span>
+                    <span className="text-primary-500 dark:text-primary-400">
+                      {openIndex === index ? <FaMinus /> : <FaPlus />}
+                    </span>
+                  </div>
+                  <AnimatePresence>
+                    {openIndex === index && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="mt-4 text-gray-600 dark:text-gray-300">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </button>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

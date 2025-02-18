@@ -50,19 +50,19 @@ const ContactForm = () => {
 
   const contactInfo = [
     {
-      icon: <FaPhone className="text-red-500" />,
+      icon: <FaPhone className="text-primary-500" />,
       title: 'טלפון',
       content: '050-123-4567',
       href: 'tel:+972501234567'
     },
     {
-      icon: <FaEnvelope className="text-red-500" />,
+      icon: <FaEnvelope className="text-primary-500" />,
       title: 'אימייל',
       content: 'contact@red-software.com',
       href: 'mailto:contact@red-software.com'
     },
     {
-      icon: <FaMapMarkerAlt className="text-red-500" />,
+      icon: <FaMapMarkerAlt className="text-primary-500" />,
       title: 'כתובת',
       content: 'תל אביב, ישראל',
       href: 'https://goo.gl/maps/yourAddress'
@@ -101,7 +101,7 @@ const ContactForm = () => {
                   <motion.a
                     key={index}
                     href={item.href}
-                    className="flex items-center space-x-4 space-x-reverse text-gray-600 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400 transition-colors duration-200"
+                    className="flex items-center space-x-4 space-x-reverse text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
                     variants={animationVariants.fadeIn}
                   >
                     <span className="flex-shrink-0">{item.icon}</span>
@@ -213,7 +213,7 @@ const ContactForm = () => {
 
               {submitStatus === 'success' && (
                 <motion.p 
-                  className="mt-4 text-green-600 text-center"
+                  className="mt-4 text-primary-600 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
@@ -223,7 +223,7 @@ const ContactForm = () => {
 
               {submitStatus === 'error' && (
                 <motion.p 
-                  className="mt-4 text-red-600 text-center"
+                  className="mt-4 text-primary-600 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >

@@ -31,7 +31,6 @@ const SEO: FC<SEOProps> = ({
     'פיתוח אפליקציות סטארטאפ',
     'פתרונות טכנולוגיים',
     'עיצוב אפליקציות',
-    'חברת הייטק',
     'software development',
     'app development',
     'web development',

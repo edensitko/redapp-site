@@ -44,12 +44,12 @@ const Footer = () => {
             <div className="flex items-center">
               <Image 
                 src="/logo.png" 
-                alt="Red Logo" 
+                alt="Redapp Logo" 
                 width={40} 
                 height={40}
-                className="w-10 h-10"
+                className="w-20 h-10"
               />
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mr-3">Red</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mr-3"></h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400">פתרונות דיגיטליים מתקדמים לעסקים</p>
             <div className="flex gap-4">

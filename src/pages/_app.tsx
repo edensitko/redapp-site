@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollCircle from '../components/ScrollCircle';
 import '../styles/tailwind.css';
 import '../styles/patterns.css';
 import Head from 'next/head';
@@ -42,6 +43,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gray-200 bg-opacity-30 rounded-full blur-[128px] animate-pulse dark:bg-gray-700 dark:bg-opacity-30"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-300 bg-opacity-30 rounded-full blur-[128px] animate-pulse delay-1000 dark:bg-gray-600 dark:bg-opacity-30"></div>
         </div>
+
+        {/* ScrollCircle */}
+        <ScrollCircle />
 
         {/* Navbar */}
         <div className={`sticky top-0 z-50 w-full bg-white bg-opacity-80 backdrop-blur-lg border-b border-gray-100 transition-all duration-300 ${scrolled ? 'shadow-md' : ''} dark:bg-gray-900 dark:bg-opacity-80 dark:border-gray-700`}>

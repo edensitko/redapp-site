@@ -23,7 +23,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900" dir="rtl">
+    <section className="py-20 bg-gray-50 dark:bg-[rgb(26,27,27)]" dir="rtl" id="about">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* Logo and Image Side */}
@@ -39,28 +39,16 @@ const About: React.FC = () => {
                 src="/logo.png"
                 alt="RedApp Logo"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={95}
+                className="object-contain"
                 priority
-                className="object-contain p-8 dark:hidden"
               />
-              <Image
-                src="/logo.white.png"
-                alt="RedApp Logo"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={95}
-                priority
-                className="object-contain p-8 hidden dark:block"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent" />
             </div>
             
             {/* Stats */}
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[80%]">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600">+100</div>
+                  <div className="text-2xl font-bold text-primary-600">+10</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">פרויקטים</div>
                 </div>
                 <div className="text-center border-x border-gray-200 dark:border-gray-700">
@@ -83,13 +71,17 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="mt-10 lg:mt-0"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-              מי אנחנו?
-              <span className="block text-primary-600 mt-2">רדאפ - פיתוח אפליקציות ואתרים</span>
-            </h2>
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
+                מי אנחנו?
+              </h2>
+              <div className="w-[200px] h-1.5 bg-gradient-to-r from-primary-700 to-red-300 rounded-full mx-auto mb-2" />
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                צוות מומחים בפיתוח אפליקציות ואתרים
+              </p>
+            </div>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-              אנחנו צוות מומחים בפיתוח אפליקציות ואתרים, עם ניסיון של שנים בתעשייה. 
               המטרה שלנו היא לספק פתרונות טכנולוגיים מתקדמים שיעזרו לעסק שלכם לצמוח ולהתפתח.
             </p>
 

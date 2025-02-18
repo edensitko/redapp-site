@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Service Card Styles */
+  .service-card {
+    @apply relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg transition-all duration-300;
+  }
+  
+  .service-card:hover {
+    @apply shadow-xl transform -translate-y-1;
+  }
+  
+  .service-card-image {
+    @apply aspect-w-16 aspect-h-9 relative overflow-hidden;
+  }
+  
+  .service-card-image img {
+    @apply object-cover w-full h-full transition-transform duration-300;
+  }
+  
+  .service-card:hover .service-card-image img {
+    @apply scale-105;
+  }
+  
+  .service-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/60 to-transparent;
+  }
+  
+  .service-card-content {
+    @apply absolute bottom-0 left-0 right-0 p-6 text-white;
+  }
+  
+  /* Service Page Hero */
+  .service-hero {
+    @apply relative h-[60vh] min-h-[400px] w-full;
+  }
+  
+  .service-hero-overlay {
+    @apply absolute inset-0 bg-gradient-to-b from-black/60 to-black/80;
+  }
+  
+  .service-hero-content {
+    @apply absolute inset-0 flex items-center;
+  }
+  
+  /* Service Process Steps */
+  .process-step {
+    @apply bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300;
+  }
+  
+  .process-step:hover {
+    @apply shadow-xl transform -translate-y-1;
+  }
+  
+  .process-step-number {
+    @apply w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold;
+  }
+  
+  /* Service Features & Benefits */
+  .feature-list {
+    @apply space-y-4;
+  }
+  
+  .feature-item {
+    @apply flex items-center gap-3 text-gray-600 dark:text-gray-400;
+  }
+  
+  .feature-icon {
+    @apply text-primary-500 flex-shrink-0;
+  }
+  
+  /* Service Sidebar */
+  .service-sidebar {
+    @apply sticky top-8 space-y-8;
+  }
+  
+  .sidebar-card {
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 transition-all duration-300;
+  }
+  
+  .sidebar-card:hover {
+    @apply shadow-2xl;
+  }
+  
+  /* Service CTA Button */
+  .service-cta {
+    @apply block w-full py-4 px-6 text-center text-white bg-primary-500 hover:bg-primary-600 
+           rounded-xl font-medium transition-colors shadow-lg shadow-primary-500/30
+           hover:shadow-xl hover:shadow-primary-500/40;
+  }
+  
+  /* Animations */
+  .fade-up {
+    @apply opacity-0 translate-y-4 transition-all duration-300;
+  }
+  
+  .fade-up.active {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Responsive Typography */
+  .service-title {
+    @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 
+           dark:from-white dark:to-gray-300 bg-clip-text text-transparent;
+  }
+  
+  .service-subtitle {
+    @apply text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed;
+  }
+  
+  /* Custom Scrollbar */
+  .custom-scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-gray-200 
+           dark:scrollbar-thumb-primary-600 dark:scrollbar-track-gray-700;
+  }
+  
+  /* Dark Mode Optimizations */
+  .dark .service-card {
+    @apply border border-gray-700;
+  }
+  
+  .dark .process-step {
+    @apply border border-gray-700;
+  }
+  
+  .dark .sidebar-card {
+    @apply border border-gray-700;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Gradients */
+.gradient-mask-b {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.gradient-mask-t {
+  mask-image: linear-gradient(to top, black 50%, transparent 100%);
+}
+
+/* Aspect Ratio Utilities */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Custom Focus Styles */
+.focus-primary {
+  @apply focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:outline-none;
+}
+
+/* Loading States */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}

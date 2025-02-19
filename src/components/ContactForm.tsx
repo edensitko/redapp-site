@@ -1,7 +1,33 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { textStyles, cardStyles, buttonStyles, formStyles, animationVariants } from '../styles/design-system';
+import { textStyles, cardStyles, buttonStyles, formStyles } from '../styles/design-system';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
+
+const animationVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  },
+  container: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  },
+  item: {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  }
+};
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -100,7 +126,7 @@ const ContactForm = () => {
       className="relative py-16 bg-gray-50 dark:bg-[#333] overflow-hidden"
       initial="hidden"
       animate="visible"
-      variants={animationVariants.container}
+      variants={animationVariants}
     >
       <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
@@ -124,7 +150,7 @@ const ContactForm = () => {
             className="space-y-8"
             variants={animationVariants.container}
           >
-            <div className={cardStyles.card}>
+            <div className={`${cardStyles.base} ${cardStyles.gradient}`}>
               <h3 className={textStyles.cardTitle}>פרטי התקשרות</h3>
               <div className="space-y-4 mt-6">
                 {contactInfo.map((info, index) => (
@@ -184,7 +210,7 @@ const ContactForm = () => {
 
           {/* Contact Form */}
           <motion.form 
-            className={`${cardStyles.card} space-y-6`}
+            className={`${cardStyles.base} ${cardStyles.gradient}`}
             onSubmit={handleSubmit}
             variants={animationVariants.container}
           >

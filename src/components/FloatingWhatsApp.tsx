@@ -35,47 +35,47 @@ export default function FloatingSocialMenu() {
     ];
 
     return (
-        <div className="fixed bottom-8 left-8 z-[99999]">
-            {/* Social Media Buttons */}
-            <div className="relative h-[10px]">
-                {socialLinks.map((social, index) => {
-                    const Icon = social.icon;
-                    const bottomPosition = isOpen ? `${(index + 1) * 70}px` : '0';
-                    
-                    return (
-                        <a
-                            key={index}
-                            href={social.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`absolute left-0 w-14 h-14 ${social.bg} ${social.hoverBg} rounded-full shadow-lg flex items-center justify-center text-white transition-all duration-300 hover:scale-110 group`}
-                            style={{
-                                bottom: bottomPosition,
-                                opacity: isOpen ? 1 : 0,
-                                visibility: isOpen ? 'visible' : 'hidden',
-                                transitionProperty: 'all',
-                                transitionDuration: '300ms',
-                                transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-                            }}
-                            aria-label={social.label}
-                        >
-                            <Icon size={28} />
-                            <span className="absolute right-full mr-3 px-2 py-1 bg-gray-900 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                                {social.label}
-                            </span>
-                        </a>
-                    );
-                })}
-            </div>
+        <div className="fixed bottom-2 left-2 z-50 flex flex-col items-end gap-4 md:bottom-8 md:right-8">
+            {isOpen && (
+                <div className="flex flex-col gap-2">
+                    {socialLinks.map((social, index) => {
+                        const Icon = social.icon;
+                        const bottomPosition = isOpen ? `${(index + 1) * 60}px` : '0';
+                        
+                        return (
+                            <a
+                                key={index}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`flex h-10 w-10 items-center justify-center rounded-full text-white transition-all duration-300 hover:scale-110 md:h-12 md:w-12 ${social.bg} ${social.hoverBg}`}
+                                style={{
+                                    bottom: bottomPosition,
+                                    opacity: isOpen ? 1 : 0,
+                                    visibility: isOpen ? 'visible' : 'hidden',
+                                    transitionProperty: 'all',
+                                    transitionDuration: '300ms',
+                                    transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                                }}
+                                aria-label={social.label}
+                            >
+                                <Icon size={20} className="md:h-6 md:w-6" />
+                                <span className="absolute right-full mr-3 px-2 py-2 bg-gray-900 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                    {social.label}
+                                </span>
+                            </a>
+                        );
+                    })}
+                </div>
+            )}
 
-            {/* Main Toggle Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`relative w-16 h-16 bg-primary-500 hover:bg-primary-600 rounded-full shadow-lg flex items-center justify-center text-white transition-all duration-300 hover:scale-110 ${isOpen ? 'rotate-45' : ''}`}
+                className={`flex h-12 p-3 w-12 items-center justify-center rounded-full bg-primary-500 hover:bg-primary-600 shadow-lg transition-colors duration-300 hover:scale-110 md:h-14 md:w-14 ${isOpen ? 'rotate-45' : ''}`}
                 aria-label="Toggle social media menu"
             >
                 <FaShareAlt size={32} />
-                <div className={`absolute inset-0 bg-primary-500 rounded-full animate-ping opacity-25 ${isOpen ? 'hidden' : ''}`} />
+                <div className={`absolute left-1 bottom-1  bg-primary-500 w-12 h-12  z-10 rounded-full animate-ping opacity-25 ${isOpen ? 'hidden' : ''}`} />
             </button>
         </div>
     );

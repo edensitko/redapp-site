@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { containerStyles, textStyles, buttonStyles } from '../styles/design-system';
+import FloatingWhatsApp from './FloatingWhatsApp';
 
 const Hero: React.FC = () => {
   return (
@@ -86,6 +87,10 @@ const Hero: React.FC = () => {
                 עוד עלינו
               </span>
             </motion.button>
+          </div>
+          {/* WhatsApp Button */}
+          <div className="mt-8 flex justify-center">
+            <FloatingWhatsApp />
           </div>
         </motion.div>
       </div>

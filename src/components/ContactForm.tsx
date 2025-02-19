@@ -1,21 +1,69 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { textStyles, cardStyles, buttonStyles, formStyles, animationVariants } from '../styles/design-system';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    company: '',
-    message: '',
-    budget: '',
-    projectType: '',
+    subject: '',
+    message: ''
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const phoneNumber = '972542424246';
+  const message = 'היי, אשמח לשמוע פרטים נוספים על השירותים שלכם';
+  const instagramUsername = 'redapp.il';
+  const facebookUsername = 'redapp.il';
+
+  const socialLinks = [
+    {
+      name: 'WhatsApp',
+      icon: FaWhatsapp,
+      href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      color: 'bg-[#25D366] hover:bg-[#20ba57]',
+      hoverText: 'hover:text-[#25D366]',
+    },
+    {
+      name: 'Instagram',
+      icon: FaInstagram,
+      href: `https://instagram.com/${instagramUsername}`,
+      color: 'bg-[#E4405F] hover:bg-[#d62e4c]',
+      hoverText: 'hover:text-[#E4405F]',
+    },
+    {
+      name: 'Facebook',
+      icon: FaFacebook,
+      href: `https://facebook.com/${facebookUsername}`,
+      color: 'bg-[#1877F2] hover:bg-[#0d65d9]',
+      hoverText: 'hover:text-[#1877F2]',
+    },
+  ];
+
+  const contactInfo = [
+    {
+      icon: <FaPhone className="text-primary-500" />,
+      title: 'טלפון',
+      content: '054-242-4246',
+      href: 'tel:+972542424246'
+    },
+    {
+      icon: <FaEnvelope className="text-primary-500" />,
+      title: 'אימייל',
+      content: 'contact@red-softwares.com',
+      href: 'mailto:contact@red-softwares.com'
+    },
+    {
+      icon: <FaMapMarkerAlt className="text-primary-500" />,
+      title: 'כתובת',
+      content: 'תל אביב, ישראל',
+      href: 'https://maps.google.com/?q=תל+אביב'
+    }
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
@@ -27,7 +75,8 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setSubmitStatus('idle');
+
     try {
       // Add your form submission logic here
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated API call
@@ -36,10 +85,8 @@ const ContactForm = () => {
         name: '',
         email: '',
         phone: '',
-        company: '',
-        message: '',
-        budget: '',
-        projectType: '',
+        subject: '',
+        message: ''
       });
     } catch (error) {
       setSubmitStatus('error');
@@ -48,190 +95,187 @@ const ContactForm = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <FaPhone className="text-primary-500" />,
-      title: 'טלפון',
-      content: '050-123-4567',
-      href: 'tel:+972501234567'
-    },
-    {
-      icon: <FaEnvelope className="text-primary-500" />,
-      title: 'אימייל',
-      content: 'contact@red-software.com',
-      href: 'mailto:contact@red-software.com'
-    },
-    {
-      icon: <FaMapMarkerAlt className="text-primary-500" />,
-      title: 'כתובת',
-      content: 'תל אביב, ישראל',
-      href: 'https://goo.gl/maps/yourAddress'
-    }
-  ];
-
   return (
     <motion.div 
       className="relative py-16 bg-gray-50 dark:bg-[#333] overflow-hidden"
       initial="hidden"
       animate="visible"
-      variants={animationVariants.staggerChildren}
+      variants={animationVariants.container}
     >
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          className="text-center mb-16"
-          variants={animationVariants.slideUp}
-        >
-          <h2 className={textStyles.sectionTitle}>צור קשר</h2>
-          <p className={textStyles.sectionSubtitle}>
+      <div className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <motion.h2 
+            className={textStyles.sectionTitle}
+            variants={animationVariants.item}
+          >
+            צור קשר
+          </motion.h2>
+          <motion.p 
+            className={textStyles.sectionSubtitle}
+            variants={animationVariants.item}
+          >
             נשמח לשמוע ממך ולעזור לך להגשים את החזון שלך
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <motion.div variants={animationVariants.slideUp}>
-            <div className={`${cardStyles.base} ${cardStyles.gradient}`}>
+          <motion.div 
+            className="space-y-8"
+            variants={animationVariants.container}
+          >
+            <div className={cardStyles.card}>
               <h3 className={textStyles.cardTitle}>פרטי התקשרות</h3>
-              <p className={textStyles.cardDescription}>
-                אנחנו כאן בשבילך. צור איתנו קשר בכל דרך שנוחה לך
-              </p>
-
-              <div className="mt-8 space-y-6">
-                {contactInfo.map((item, index) => (
+              <div className="space-y-4 mt-6">
+                {contactInfo.map((info, index) => (
                   <motion.a
                     key={index}
-                    href={item.href}
-                    className="flex items-center space-x-4 space-x-reverse text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
-                    variants={animationVariants.fadeIn}
+                    href={info.href}
+                    className="flex items-center space-x-4 text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                    variants={animationVariants.item}
+                    target={info.title === 'כתובת' ? '_blank' : undefined}
+                    rel={info.title === 'כתובת' ? 'noopener noreferrer' : undefined}
                   >
-                    <span className="flex-shrink-0">{item.icon}</span>
+                    <span className="w-10 h-10 flex items-center justify-center rounded-full bg-primary-50 dark:bg-primary-900">
+                      {info.icon}
+                    </span>
                     <div>
-                      <p className="font-medium">{item.title}</p>
-                      <p className="text-sm">{item.content}</p>
+                      <p className="font-medium">{info.title}</p>
+                      <p className="text-sm">{info.content}</p>
                     </div>
                   </motion.a>
                 ))}
+              </div>
+
+              <div className="mt-8 space-y-6">
+                <h3 className={textStyles.cardTitle}>מדיה חברתית</h3>
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => {
+                    const Icon = social.icon;
+                    return (
+                      <a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`p-3 rounded-full text-white transition-all duration-300 hover:scale-110 ${social.color}`}
+                        aria-label={social.name}
+                      >
+                        <Icon className="w-6 h-6" />
+                      </a>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-6">
+                  <a
+                    href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20ba57] text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                  >
+                    <FaWhatsapp className="w-5 h-5" />
+                    צור קשר בוואטסאפ
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div variants={animationVariants.slideUp}>
-            <form onSubmit={handleSubmit} className={cardStyles.form}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className={formStyles.label}>שם מלא</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={formStyles.input}
-                    required
-                  />
-                </div>
+          <motion.form 
+            className={`${cardStyles.card} space-y-6`}
+            onSubmit={handleSubmit}
+            variants={animationVariants.container}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <motion.div variants={animationVariants.item}>
+                <label htmlFor="name" className={formStyles.label}>שם מלא</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={formStyles.input}
+                  required
+                />
+              </motion.div>
 
-                <div>
-                  <label htmlFor="email" className={formStyles.label}>אימייל</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={formStyles.input}
-                    required
-                  />
-                </div>
+              <motion.div variants={animationVariants.item}>
+                <label htmlFor="phone" className={formStyles.label}>טלפון</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className={formStyles.input}
+                  required
+                />
+              </motion.div>
+            </div>
 
-                <div>
-                  <label htmlFor="phone" className={formStyles.label}>טלפון</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className={formStyles.input}
-                  />
-                </div>
+            <motion.div variants={animationVariants.item}>
+              <label htmlFor="email" className={formStyles.label}>אימייל</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className={formStyles.input}
+                required
+              />
+            </motion.div>
 
-                <div>
-                  <label htmlFor="company" className={formStyles.label}>חברה</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className={formStyles.input}
-                  />
-                </div>
+            <motion.div variants={animationVariants.item}>
+              <label htmlFor="subject" className={formStyles.label}>נושא</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                className={formStyles.input}
+                required
+              />
+            </motion.div>
 
-                <div className="md:col-span-2">
-                  <label htmlFor="projectType" className={formStyles.label}>סוג הפרויקט</label>
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className={formStyles.input}
-                    required
-                  >
-                    <option value="">בחר סוג פרויקט</option>
-                    <option value="web">פיתוח אתר</option>
-                    <option value="app">פיתוח אפליקציה</option>
-                    <option value="ecommerce">חנות אונליין</option>
-                    <option value="other">אחר</option>
-                  </select>
-                </div>
+            <motion.div variants={animationVariants.item}>
+              <label htmlFor="message" className={formStyles.label}>הודעה</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                className={formStyles.textarea}
+                required
+              />
+            </motion.div>
 
-                <div className="md:col-span-2">
-                  <label htmlFor="message" className={formStyles.label}>הודעה</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className={formStyles.textarea}
-                    rows={4}
-                    required
-                  />
-                </div>
-              </div>
+            <motion.button
+              type="submit"
+              className={`${buttonStyles.primary} w-full`}
+              disabled={isSubmitting}
+              variants={animationVariants.item}
+            >
+              {isSubmitting ? 'שולח...' : 'שלח הודעה'}
+            </motion.button>
 
-              <div className="mt-6">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`${buttonStyles.primary} w-full`}
-                >
-                  {isSubmitting ? 'שולח...' : 'שלח הודעה'}
-                </button>
-              </div>
+            {submitStatus === 'success' && (
+              <motion.p className="text-green-500 text-center" variants={animationVariants.item}>
+                ההודעה נשלחה בהצלחה!
+              </motion.p>
+            )}
 
-              {submitStatus === 'success' && (
-                <motion.p 
-                  className="mt-4 text-primary-600 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  ההודעה נשלחה בהצלחה! נחזור אליך בהקדם.
-                </motion.p>
-              )}
-
-              {submitStatus === 'error' && (
-                <motion.p 
-                  className="mt-4 text-primary-600 text-center"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                >
-                  אירעה שגיאה בשליחת ההודעה. אנא נסה שוב מאוחר יותר.
-                </motion.p>
-              )}
-            </form>
-          </motion.div>
+            {submitStatus === 'error' && (
+              <motion.p className="text-red-500 text-center" variants={animationVariants.item}>
+                אירעה שגיאה בשליחת ההודעה. אנא נסה שוב.
+              </motion.p>
+            )}
+          </motion.form>
         </div>
       </div>
     </motion.div>

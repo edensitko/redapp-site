@@ -1,8 +1,15 @@
+'use client';
+
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa';
 import Image from 'next/image';
 
 const Footer = () => {
+  const phoneNumber = '972542424246';
+  const message = 'היי, אשמח לשמוע פרטים נוספים על השירותים שלכם';
+  const instagramUsername = 'redapp.il';
+  const facebookUsername = 'redapp.il';
+
   const footerLinks = {
     services: [
       { name: 'פיתוח אתרים', href: '#web-development' },
@@ -17,9 +24,24 @@ const Footer = () => {
       { name: 'קריירה', href: '#careers' },
     ],
     social: [
-      { name: 'LinkedIn', icon: FaLinkedin, href: 'https://linkedin.com' },
-      { name: 'GitHub', icon: FaGithub, href: 'https://github.com' },
-      { name: 'Email', icon: FaEnvelope, href: 'mailto:contact@red-softwares.com' },
+      { 
+        name: 'WhatsApp', 
+        icon: FaWhatsapp, 
+        href: `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+        color: 'hover:text-[#25D366]'
+      },
+      { 
+        name: 'Instagram', 
+        icon: FaInstagram, 
+        href: `https://instagram.com/${instagramUsername}`,
+        color: 'hover:text-[#E4405F]'
+      },
+      { 
+        name: 'Facebook', 
+        icon: FaFacebook, 
+        href: `https://facebook.com/${facebookUsername}`,
+        color: 'hover:text-[#1877F2]'
+      },
     ],
   };
 
@@ -59,9 +81,10 @@ const Footer = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                    className={`text-gray-400 ${item.color} transition-colors`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={item.name}
                   >
                     <Icon className="h-6 w-6" />
                   </a>
@@ -110,8 +133,8 @@ const Footer = () => {
             <address className="text-gray-600 dark:text-gray-400 not-italic space-y-4">
               <p className="flex items-center">
                 <span className="font-medium">טלפון:</span>
-                <a href="tel:+972-54-XXX-XXXX" className="mr-2 hover:text-primary-500 dark:hover:text-primary-400">
-                  054-XXX-XXXX
+                <a href="tel:+972542424246" className="mr-2 hover:text-primary-500 dark:hover:text-primary-400">
+                  054-242-4246
                 </a>
               </p>
               <p className="flex items-center">

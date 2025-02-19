@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
@@ -44,8 +46,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       <nav
         className={`w-full max-w-[95%] transition-all duration-500 rounded-2xl border
           ${scrolled 
-            ? 'py-2 bg-white/95 dark:bg-dark-100/95 backdrop-blur-lg shadow-lg border-gray-200 dark:border-gray-700/30 scale-[0.98] -translate-y-1'
-            : 'py-4 bg-transparent dark:bg-transparent border-transparent dark:border-transparent hover:bg-white/10 dark:hover:bg-dark-100/10'
+            ? 'py-0 bg-white/95 dark:bg-dark-100/95 backdrop-blur-lg shadow-lg border-gray-200 dark:border-gray-700/30 scale-[0.98] -translate-y-1'
+            : 'py-1 bg-transparent dark:bg-transparent border-transparent dark:border-transparent hover:bg-white/10 dark:hover:bg-dark-100/10'
           }`}
         dir="rtl"
       >
@@ -54,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/">
-                <div className="relative w-28 h-20">
+                <div className="relative w-24 h-20">
                   <Image
                     src="/logo.png"
                     alt="Logo"

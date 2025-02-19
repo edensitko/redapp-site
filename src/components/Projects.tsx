@@ -61,6 +61,8 @@ const Projects: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0.6, 1]);
+  const videoY = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1.2, 1.4]);
 
   const [selectedCategory, setSelectedCategory] = useState('הכל');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -70,10 +72,30 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <section className="relative py-20 overflow-hidden" dir="rtl" id="projects">
-      {/* Grid Background Pattern */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+    <section className="relative overflow-hidden" dir="rtl" id="projects">
+      {/* Video Background with Parallax */}
+      <div className="relative h-[400px] w-full overflow-hidden">
+        <motion.div 
+          style={{ 
+            y: videoY,
+            scale: videoScale,
+          }}
+          className="absolute top-0 left-0 w-full h-[400px]"
+        >
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-fill"
+            style={{ rotate: '180deg' }}
+          >
+            <source src="/videos/par.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white/80 dark:from-[#1e1e1e]/80 dark:via-[#1e1e1e]/40 dark:to-[#1e1e1e]/80" />
+        </motion.div>
       </div>
 
       {/* Abstract Shapes */}

@@ -23,7 +23,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20  overflow-hidden" dir="rtl" id="about">
+    <section className="relative  overflow-hidden" dir="rtl" id="about">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
@@ -44,7 +44,7 @@ const About: React.FC = () => {
                 מי אנחנו?
               </h2>
               <div className="w-[200px] h-1.5 bg-gradient-to-r from-primary-700 to-red-300 rounded-full mx-auto mb-2" />
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg  max-w-2xl mx-auto leading-relaxed">
                 צוות מומחים בפיתוח אפליקציות ואתרים
               </p>
             </div>
@@ -106,7 +106,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="relative lg:order-2"
           >
-            <div className="relative h-[200px] lg:h-[300px] mx-auto max-w-[80%] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[400px] lg:h-[500px] mx-auto max-w-[80%] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="/logo.png"
                 alt="RedApp Logo"
@@ -117,7 +117,7 @@ const About: React.FC = () => {
             </div>
             
             {/* Stats */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[80%]">
+            <div className="absolute bottom-6 left-1/2 transform z-20 -translate-x-1/2 bg-white dark:bg-[#1e1e1e] rounded-xl shadow-xl p-6 w-[80%]">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary-600">+10</div>

@@ -39,8 +39,7 @@ const Process: React.FC = () => {
 
       {/* Abstract Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -bottom-[20%] left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl dark:from-primary-500/10" />
-        <div className="absolute -top-[10%] right-[20%] w-[400px] h-[400px] bg-gradient-to-bl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl dark:from-red-500/10" />
+        <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-gradient-to-tr from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl dark:from-primary-500/10" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +52,7 @@ const Process: React.FC = () => {
             className="inline-block px-6 py-2 mb-6 rounded-full 
                      bg-white dark:bg-[rgb(36,37,37)]
                      border border-gray-200 dark:border-[rgb(46,47,47)]
-                     shadow-sm hover:shadow-md transition-shadow"
+                     transition-shadow"
           >
             <span className="text-lg font-medium bg-gradient-to-r from-primary-600 to-red-500 bg-clip-text text-transparent">
               תהליך העבודה
@@ -79,8 +78,8 @@ const Process: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-[rgb(46,47,47)] relative z-10 
-                          transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+              <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 border border-gray-100 dark:border-[rgb(46,47,47)] relative z-10 
+                          transition-all duration-300 group-hover:-translate-y-1">
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
                 

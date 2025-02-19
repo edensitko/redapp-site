@@ -14,8 +14,7 @@ const HomeBlog: React.FC = () => {
 
       {/* Abstract Shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] bg-gradient-to-br from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl transform -rotate-12" />
-        <div className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-gradient-to-tl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl transform rotate-12" />
+        <div className="absolute -bottom-[50%] -left-[10%] w-[600px] h-[600px] bg-gradient-to-tl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl transform rotate-12" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

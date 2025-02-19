@@ -35,7 +35,7 @@ export default function FloatingSocialMenu() {
     ];
 
     return (
-        <div className="fixed bottom-2 left-2 z-50 flex flex-col items-end gap-4 md:bottom-8 md:right-8">
+        <div className="fixed bottom-2 left-2 z-999 flex flex-col items-end gap-4 md:bottom-8 md:right-8">
             {isOpen && (
                 <div className="flex flex-col gap-2">
                     {socialLinks.map((social, index) => {

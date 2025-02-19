@@ -191,7 +191,6 @@ const Pricing: React.FC = () => {
       {/* Abstract Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-[40%] right-[20%] w-[800px] h-[800px] bg-gradient-to-br from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl transform rotate-12" />
-        <div className="absolute -bottom-[40%] left-[20%] w-[800px] h-[800px] bg-gradient-to-tl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl transform -rotate-12" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -52,7 +52,7 @@ const Services: React.FC = () => {
     <section className="relative py-20 overflow-hidden" dir="rtl" id="services">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+        <div className="absolute inset-10 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
       </div>
 
       {/* Abstract Shapes */}

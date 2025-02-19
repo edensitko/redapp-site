@@ -31,15 +31,19 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-[rgb(26,27,27)] relative overflow-hidden" dir="rtl">
-      {/* Abstract Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[30%] -right-[10%] w-[500px] h-[500px] bg-primary-500/5 dark:bg-primary-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-[30%] -left-[10%] w-[500px] h-[500px] bg-primary-500/5 dark:bg-primary-500/10 rounded-full blur-3xl" />
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5 dark:opacity-10" />
+    <section className="relative py-20 overflow-hidden" dir="rtl" id="process">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Abstract Shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -bottom-[20%] left-[10%] w-[600px] h-[600px] bg-gradient-to-tr from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl dark:from-primary-500/10" />
+        <div className="absolute -top-[10%] right-[20%] w-[400px] h-[400px] bg-gradient-to-bl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl dark:from-red-500/10" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div

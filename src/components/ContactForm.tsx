@@ -71,7 +71,7 @@ const ContactForm = () => {
 
   return (
     <motion.div 
-      className="relative py-16 bg-gray-50 dark:bg-gray-900 overflow-hidden"
+      className="relative py-16 bg-gray-50 dark:bg-[#333] overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={animationVariants.staggerChildren}

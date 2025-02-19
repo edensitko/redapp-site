@@ -227,8 +227,19 @@ const Pricing: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('websites');
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900/50">
-      <div className="container mx-auto px-4">
+    <section className="relative py-20 overflow-hidden" dir="rtl" id="pricing">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+      </div>
+
+      {/* Abstract Shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-gradient-to-br from-primary-500/10 via-red-500/5 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-gradient-to-tl from-red-500/10 via-primary-500/5 to-transparent rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
             viewport={{ once: true }}

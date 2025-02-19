@@ -23,53 +23,21 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-[rgb(26,27,27)]" dir="rtl" id="about">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Logo and Image Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/logo.png"
-                alt="RedApp Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-            
-            {/* Stats */}
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[80%]">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600">+10</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">פרויקטים</div>
-                </div>
-                <div className="text-center border-x border-gray-200 dark:border-gray-700">
-                  <div className="text-2xl font-bold text-primary-600">98%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">שביעות רצון</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary-600">24/7</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">תמיכה</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+    <section className="relative py-20  overflow-hidden" dir="rtl" id="about">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+      </div>
 
-          {/* Content Side */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Content Side - Now First on Desktop */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mt-10 lg:mt-0"
+            className="mt-10 lg:mt-0 lg:order-1"
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
@@ -127,6 +95,43 @@ const About: React.FC = () => {
               >
                 הפרויקטים שלנו
               </motion.a>
+            </div>
+          </motion.div>
+
+          {/* Logo and Image Side - Now Second on Desktop */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative lg:order-2"
+          >
+            <div className="relative h-[200px] lg:h-[300px] mx-auto max-w-[80%] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/logo.png"
+                alt="RedApp Logo"
+                fill
+                className="object-contain p-6"
+                priority
+              />
+            </div>
+            
+            {/* Stats */}
+            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 w-[80%]">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary-600">+10</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">פרויקטים</div>
+                </div>
+                <div className="text-center border-x border-gray-200 dark:border-gray-700">
+                  <div className="text-2xl font-bold text-primary-600">98%</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">שביעות רצון</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary-600">24/7</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">תמיכה</div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -31,9 +31,13 @@ const ScrollCircle = () => {
 
   const size = Math.max(window.innerWidth, window.innerHeight) * 0.1;
   
+  const isMobile = window.innerWidth < 768;
+
   const calculateTargetScale = () => {
-    const targetWidth = window.innerWidth * 3.5;
-    return targetWidth / size;
+    if (isMobile) {
+      return window.innerWidth / size * 5; 
+    }
+    return window.innerWidth * 3.5 / size;
   };
 
   // Calculate the midpoint for the animation
@@ -45,11 +49,13 @@ const ScrollCircle = () => {
       sectionRange.projectsStart,
       sectionRange.projectsStart + window.innerHeight * 0.83,
       midPoint,
-      sectionRange.projectsEnd - window.innerHeight * 0.4,
+      sectionRange.projectsEnd - window.innerHeight * 0.7,
       sectionRange.projectsEnd - window.innerHeight * 0.2,
       sectionRange.projectsEnd
     ],
-    [1, calculateTargetScale(), calculateTargetScale(), calculateTargetScale(), 1, 0.2]
+    isMobile 
+      ? [1, calculateTargetScale() * 1.2, calculateTargetScale() * 1.2, calculateTargetScale() * 1.2, 1, 0.2]
+      : [1, calculateTargetScale(), calculateTargetScale(), calculateTargetScale(), 1, 0.2]
   );
 
   const opacity = useTransform(

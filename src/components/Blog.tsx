@@ -17,8 +17,19 @@ const Blog: FC = () => {
     .slice(0, 3);
 
   return (
-    <section className="min-h-screen bg-gray-50 dark:bg-gray-800/50 py-20 px-4" dir="rtl">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-20 overflow-hidden" dir="rtl" id="blog">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+      </div>
+
+      {/* Abstract Shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-[40%] left-[20%] w-[800px] h-[800px] bg-gradient-to-br from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl transform rotate-12" />
+        <div className="absolute -bottom-[40%] right-[20%] w-[800px] h-[800px] bg-gradient-to-tl from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl transform -rotate-12" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div 
           initial={{ opacity: 0 }}

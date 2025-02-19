@@ -52,10 +52,13 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-white dark:bg-gray-900" dir="rtl" id="contact">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" />
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20 bg-gray-50 dark:bg-[#1e1e1e] overflow-hidden" dir="rtl" id="contact">
+      {/* Grid Background Pattern */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-1">
@@ -80,7 +83,7 @@ const Contact: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start p-4 rounded-xl bg-gray-50 dark:bg-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="flex items-start p-4 rounded-xl bg-gray-50 dark:bg-[#252525] hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-200"
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-100 dark:bg-primary-900/30 flex items-center justify-center text-primary-600 dark:text-primary-400">
                   {item.icon}
@@ -103,7 +106,7 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
+            className="lg:col-span-2 bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-xl p-8"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -118,7 +121,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#252525] border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
                     placeholder="הכנס את שמך המלא"
                   />
                 </div>
@@ -133,7 +136,7 @@ const Contact: React.FC = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#252525] border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
                     placeholder="הכנס מספר טלפון"
                   />
                 </div>
@@ -148,7 +151,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#252525] border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
                     placeholder="הכנס את האימייל שלך"
                   />
                 </div>
@@ -162,7 +165,7 @@ const Contact: React.FC = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#252525] border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200"
                     placeholder="שם החברה (לא חובה)"
                   />
                 </div>
@@ -178,7 +181,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-[#252525] border-0 focus:ring-2 focus:ring-primary-500 dark:text-white transition-colors duration-200 resize-none"
                   placeholder="ספר לנו על הפרויקט שלך"
                 />
               </div>

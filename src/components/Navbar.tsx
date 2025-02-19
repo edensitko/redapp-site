@@ -94,14 +94,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               {/* Call to Action Button */}
               <Link 
                 href="/contact"
-                className="inline-flex items-center px-2.5 py-2 m-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 gap-2"
+                className="hidden md:inline-flex items-center px-2.5 py-2 m-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 gap-2"
               >
 בואו נדבר      </Link>
 
               {/* Theme Toggle Button */}
               <button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                className="p-2 rounded-lg bg-transparent text-gray-800 dark:text-gray-200 hover:bg-gray-100/20 dark:hover:bg-gray-700/20 transition-colors duration-200"
                 aria-label="Toggle Theme"
               >
                 {theme === 'dark' ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
               {/* Mobile menu button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 ml-2"
+                className="md:hidden p-2 rounded-lg bg-transparent text-gray-800 dark:text-gray-200 hover:bg-gray-100/20 dark:hover:bg-gray-700/20 transition-colors duration-200 ml-2"
                 aria-label="Toggle Menu"
               >
                 <div className="w-5 h-5 flex flex-col justify-between">
@@ -143,6 +143,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
                       {link.name}
                     </Link>
                   ))}
+                  {/* Call to Action Button in mobile menu */}
+                  <Link
+                    href="/contact"
+                    className="block px-3 py-2 rounded-lg text-white bg-red-600 hover:bg-red-700 transition-colors duration-200 text-sm font-medium text-center mt-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    בואו נדבר
+                  </Link>
                 </div>
               </motion.div>
             )}

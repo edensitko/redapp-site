@@ -29,14 +29,21 @@ const Hero: React.FC = () => {
         >
           {/* Main Title */}
           <motion.h1
-            className="text-4xl sm:text-4xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary-700 to-primary-900 dark:from-primary-300 dark:to-primary-500 text-transparent bg-clip-text"
+            className="text-4xl sm:text-4xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary-500 to-primary-900 dark:from-primary-300 dark:to-primary-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            מובילים את המהפכה הדיגיטלית שלך - פיתוח בסטנדרט חדש
+            מובילים את המהפכה הדיגיטלית שלך 
           </motion.h1>
-
+          <motion.h1
+            className="text-2xl sm:text-2xl md:text-2xl  mt-4  text-center bg-gradient-to-r from-primary-300 to-primary-600 dark:from-primary-200 dark:to-primary-300 text-transparent bg-clip-text"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+             פיתוח בסטנדרט חדש
+          </motion.h1>
           {/* Subtitle */}
           <motion.div 
             className="mb-8"
@@ -44,16 +51,13 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <p className={`${textStyles.sectionSubtitle} text-gray-800 dark:text-gray-200`}>
-              אנחנו מפתחים פתרונות טכנולוגיים חדשניים שעוזרים לעסקים להצליח בעידן הדיגיטלי
-            </p>
+          
             <p className={`${textStyles.accentText} text-gray-700 dark:text-gray-300`}>
-              מהחזון ועד לביצוע, אנחנו כאן בשבילכם
             </p>
           </motion.div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <div className="flex flex-row items-center justify-center gap-4 mt-8">
             <motion.button
               className={`group relative px-8 py-4 text-lg font-medium bg-gradient-to-r from-primary-600 to-primary-500 text-white rounded-xl 
                 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200

@@ -35,7 +35,7 @@ export default function FloatingSocialMenu() {
     ];
 
     return (
-        <div className="fixed bottom-2 left-2 z-999 flex flex-col items-end gap-4 md:bottom-8 md:right-8">
+        <div className="fixed bottom-6 left-4 z-[99999] flex flex-col items-end gap-4 md:bottom-8 md:right-8">
             {isOpen && (
                 <div className="flex flex-col gap-2">
                     {socialLinks.map((social, index) => {
@@ -75,7 +75,7 @@ export default function FloatingSocialMenu() {
                 aria-label="Toggle social media menu"
             >
                 <FaShareAlt size={32} className="text-white" />
-                <div className={`absolute left-1 bottom-1  bg-primary-500 w-12 h-12  z-10 rounded-full animate-ping opacity-25 ${isOpen ? 'hidden' : ''}`} />
+                <div className={`absolute left-1 bottom-1  bg-primary-500 w-12 h-12  z-[99998] rounded-full animate-ping opacity-25 ${isOpen ? 'hidden' : ''}`} />
             </button>
         </div>
     );

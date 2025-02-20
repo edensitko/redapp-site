@@ -14,10 +14,10 @@ interface NavbarProps {
 const navLinks = [
   { name: 'בית', href: '/', label: 'בית' },
   { name: 'שירותים', href: '/services', label: 'שירותים' },
-  { name: 'פרויקטים', href: '#projects', label: 'פרויקטים' },
-  { name: 'תמחור', href: '#pricing', label: 'תמחור' },
+  { name: 'פרויקטים', href: '/projects', label: 'פרויקטים' },
+  { name: 'תמחור', href: '/pricing', label: 'תמחור' },
   { name: 'בלוג', href: '/blog', label: 'בלוג' },
-  { name: 'צור קשר', href: '#contact', label: 'צור קשר' },
+  { name: 'צור קשר', href: '/contact', label: 'צור קשר' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {

@@ -104,7 +104,7 @@ const Projects: React.FC = () => {
         <div className="absolute bottom-[10%] right-[10%] w-[600px] h-[600px] bg-gradient-to-l from-red-500/20 via-primary-500/10 to-transparent rounded-full blur-3xl transform -rotate-45" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           style={{ scale, opacity }}
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"

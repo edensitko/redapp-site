@@ -42,7 +42,7 @@ const Process: React.FC = () => {
         <div className="absolute top-[10%] right-[10%] w-[400px] h-[400px] bg-gradient-to-tr from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl dark:from-primary-500/10" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div

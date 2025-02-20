@@ -193,7 +193,7 @@ const Pricing: React.FC = () => {
         <div className="absolute -top-[40%] right-[20%] w-[800px] h-[800px] bg-gradient-to-br from-primary-500/20 via-red-500/10 to-transparent rounded-full blur-3xl transform rotate-12" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <motion.h2
             className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-primary-500 to-primary-900 dark:from-primary-300 dark:to-primary-500 text-transparent bg-clip-text mb-4"

@@ -29,7 +29,7 @@ const About: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
           {/* Content Side - Now First on Desktop */}
           <motion.div
@@ -117,7 +117,7 @@ const About: React.FC = () => {
             </div>
             
             {/* Stats */}
-            <div className="absolute bottom-6 left-1/2 transform z-20 -translate-x-1/2 bg-white dark:bg-[#1e1e1e] rounded-xl shadow-xl p-6 w-[80%]">
+            <div className="absolute bottom-6 left-1/2 transform  -translate-x-1/2 bg-white dark:bg-[#1e1e1e] rounded-xl shadow-xl p-6 w-[80%]">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-primary-600">+10</div>

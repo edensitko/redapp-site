@@ -1,17 +1,29 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { containerStyles, textStyles, buttonStyles } from '../styles/design-system';
 import FloatingWhatsApp from './FloatingWhatsApp';
+import LoadingScreen from './LoadingScreen';
 
 const Hero: React.FC = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+  const handleVideoLoad = () => {
+    setIsVideoLoaded(true);
+  };
+
   return (
     <div className={`relative w-full h-screen overflow-hidden`} id="home">
+      <AnimatePresence>
+        {!isVideoLoaded && <LoadingScreen />}
+      </AnimatePresence>
+
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
           autoPlay
           muted
           playsInline
+          onLoadedData={handleVideoLoad}
           className="absolute top-0 left-0 w-full h-full object-cover"
         >
           <source src="/videos/background.mp4" type="video/mp4" />

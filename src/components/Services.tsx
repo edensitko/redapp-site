@@ -1,50 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaMobile, FaGlobe, FaRobot, FaShoppingCart, FaCode, FaServer } from 'react-icons/fa';
+import LottieIcon from './LottieIcon';
 
 const Services: React.FC = () => {
   const services = [
     {
-      icon: <FaMobile className="w-6 h-6" />,
       title: 'פיתוח אפליקציות',
-      description: 'פיתוח אפליקציות מותאמות אישית לאנדרואיד ו-iOS עם חווית משתמש מתקדמת',
-      features: ['React Native', 'Flutter', 'UI/UX מותאם אישית', 'אינטגרציה מלאה'],
-      gradient: 'from-blue-500 to-cyan-400',
+      description: 'פיתוח אפליקציות מותאמות אישית לצרכים העסקיים שלך',
+      features: ['React Native', 'Flutter', 'iOS', 'Android'],
+      gradient: 'from-purple-500 to-indigo-400',
     },
     {
-      icon: <FaGlobe className="w-6 h-6" />,
       title: 'פיתוח אתרים',
       description: 'בניית אתרים מודרניים ומותאמים לכל המכשירים עם טכנולוגיות מתקדמות',
       features: ['Next.js', 'React', 'WordPress', 'חנויות אונליין'],
-      gradient: 'from-purple-500 to-pink-400',
+      gradient: 'from-blue-500 to-cyan-400',
     },
     {
-      icon: <FaRobot className="w-6 h-6" />,
-      title: 'אוטומציה ובינה מלאכותית',
-      description: 'פתרונות חכמים לייעול תהליכים עסקיים ואינטגרציה של בינה מלאכותית',
-      features: ['צאט בוטים', 'אוטומציה', 'עיבוד נתונים', 'מערכות ML'],
-      gradient: 'from-green-500 to-emerald-400',
-    },
-    {
-      icon: <FaShoppingCart className="w-6 h-6" />,
-      title: 'מסחר אלקטרוני',
-      description: 'הקמת חנויות אונליין מתקדמות עם מערכות תשלום ומלאי אוטומטיות',
-      features: ['Shopify', 'WooCommerce', 'מערכות תשלום', 'ניהול מלאי'],
-      gradient: 'from-orange-500 to-yellow-400',
-    },
-    {
-      icon: <FaCode className="w-6 h-6" />,
-      title: 'פיתוח תוכנה',
-      description: 'פיתוח פתרונות תוכנה מותאמים אישית לצרכים העסקיים שלכם',
-      features: ['Node.js', 'Python', 'Java', 'מערכות ארגוניות'],
+      title: 'אבטחת מידע',
+      description: 'הגנה על המידע והנכסים הדיגיטליים שלך מפני איומי סייבר',
+      features: ['אבטחת רשת', 'הצפנת מידע', 'בדיקות חדירה', 'ניטור אבטחה'],
       gradient: 'from-red-500 to-pink-400',
     },
     {
-      icon: <FaServer className="w-6 h-6" />,
-      title: 'תשתיות ענן',
-      description: 'הקמה וניהול של תשתיות ענן מתקדמות עם אבטחה מקסימלית',
-      features: ['AWS', 'Google Cloud', 'Azure', 'DevOps'],
-      gradient: 'from-indigo-500 to-blue-400',
+      title: 'ייעוץ טכנולוגי',
+      description: 'ייעוץ מקצועי לבחירת הטכנולוגיות המתאימות ביותר לעסק שלך',
+      features: ['ארכיטקטורת מערכת', 'בחירת טכנולוגיות', 'תכנון פרויקטים', 'ליווי טכני'],
+      gradient: 'from-green-500 to-emerald-400',
+    },
+    {
+      title: 'UI/UX עיצוב',
+      description: 'עיצוב ממשק משתמש מודרני וחווית משתמש אינטואיטיבית',
+      features: ['עיצוב ממשק', 'חווית משתמש', 'מיתוג', 'פרוטוטייפינג'],
+      gradient: 'from-yellow-500 to-orange-400',
+    },
+    {
+      title: 'תחזוקה ותמיכה',
+      description: 'תמיכה טכנית ותחזוקה שוטפת למערכות קיימות',
+      features: ['תמיכה טכנית', 'עדכוני מערכת', 'גיבוי מידע', 'ניטור ביצועים'],
+      gradient: 'from-pink-500 to-rose-400',
     },
   ];
 
@@ -89,8 +83,21 @@ const Services: React.FC = () => {
               
               <div className="relative p-6">
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center text-white mb-4 transform group-hover:scale-110 transition-transform duration-300`}>
-                  {service.icon}
+                <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 bg-gradient-to-r ${service.gradient}`}>
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: [0, -10, 10, -10, 0],
+                      transition: { duration: 0.5 }
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-12 h-12"
+                  >
+                    <LottieIcon />
+                  </motion.div>
                 </div>
 
                 {/* Content */}

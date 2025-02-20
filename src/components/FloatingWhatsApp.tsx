@@ -74,7 +74,7 @@ export default function FloatingSocialMenu() {
                 className={`flex h-12 p-3 w-12 items-center justify-center rounded-full bg-primary-500 hover:bg-primary-600 shadow-lg transition-colors duration-300 hover:scale-110 md:h-14 md:w-14 ${isOpen ? 'rotate-45' : ''}`}
                 aria-label="Toggle social media menu"
             >
-                <FaShareAlt size={32} />
+                <FaShareAlt size={32} className="text-white" />
                 <div className={`absolute left-1 bottom-1  bg-primary-500 w-12 h-12  z-10 rounded-full animate-ping opacity-25 ${isOpen ? 'hidden' : ''}`} />
             </button>
         </div>

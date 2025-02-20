@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next/types';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -8,8 +8,15 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'RedApp',
-  description: 'RedApp - פתרונות דיגיטליים מתקדמים לעסקים',
+  title: 'RedApp - פיתוח אפליקציות ואתרים',
+  description: 'פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

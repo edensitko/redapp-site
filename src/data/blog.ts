@@ -8,6 +8,7 @@ export interface BlogPost {
   author: string;
   image: string;
   category: string;
+  tags: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -41,7 +42,8 @@ export const blogPosts: BlogPost[] = [
     date: '2024-02-15',
     author: 'יעל כהן',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    category: 'עיצוב'
+    category: 'עיצוב',
+    tags: ['עיצוב', 'טרנדים', '2024', 'UX/UI']
   },
   {
     id: 'seo-optimization-guide',
@@ -73,7 +75,8 @@ export const blogPosts: BlogPost[] = [
     date: '2024-02-10',
     author: 'דוד לוי',
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    category: 'SEO'
+    category: 'SEO',
+    tags: ['SEO', 'אופטימיזציה', 'מנועי חיפוש', 'דירוג']
   },
   {
     id: 'react-performance-tips',
@@ -105,7 +108,8 @@ export const blogPosts: BlogPost[] = [
     date: '2024-02-05',
     author: 'רון ישראלי',
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    category: 'פיתוח'
+    category: 'פיתוח',
+    tags: ['React', 'ביצועים', 'אופטימיזציה', 'פיתוח']
   }
 ];
 

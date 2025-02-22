@@ -21,7 +21,7 @@ const MorphismBox: React.FC<MorphismBoxProps> = ({ children, className = '' }) =
       </div>
 
       {/* Content container with morphism effect */}
-      <div className="relative z-10 w-full rounded-3xl 
+      <div className="relative  w-full rounded-3xl 
                     bg-gradient-to-br from-white/[0.08] to-white/[0.03]
                     backdrop-blur-xl border border-white/10
                     shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)]

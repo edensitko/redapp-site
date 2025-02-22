@@ -78,7 +78,7 @@ const Process: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 border border-gray-100 dark:border-[rgb(46,47,47)] relative z-10 
+              <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 border border-gray-100 dark:border-[rgb(46,47,47)] relative 
                           transition-all duration-300 group-hover:-translate-y-1">
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />

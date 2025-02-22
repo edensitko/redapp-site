@@ -2,7 +2,7 @@
 export const containerStyles = {
   section: "relative bg-white w-full overflow-hidden",
   mainContent: "relative w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8",
-  innerContainer: `relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20
+  innerContainer: `relative  w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20
     bg-white
     rounded-2xl 
     border border-gray-100

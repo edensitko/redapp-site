@@ -1,4 +1,3 @@
-import React from 'react';
 import Blog from '@/components/Blog';
 
 export const metadata = {
@@ -7,9 +6,5 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  return (
-    <main className="min-h-screen">
-      <Blog />
-    </main>
-  );
+  return <Blog />;
 }

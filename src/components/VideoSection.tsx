@@ -21,7 +21,7 @@ const CreativeCTAButton: React.FC<{ onClick: () => void }> = ({ onClick }) => {
         transform transition-all duration-500
         hover:scale-105 hover:shadow-2xl"
     >
-      <span className="relative z-10 flex items-center">
+      <span className="relative  flex items-center">
         התחל את המהפכה
         <motion.span
           animate={{ 

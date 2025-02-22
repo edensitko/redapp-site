@@ -33,13 +33,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div dir="rtl" className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200 text-gray-900 dark:text-gray-100">
         {/* Background Effects */}
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-5">
           <div className="absolute inset-0 bg-gray-100 bg-opacity-20 dark:bg-gray-900 dark:bg-opacity-20"></div>
           <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-gray-100 via-gray-100 to-transparent blur-3xl dark:from-gray-900 dark:via-gray-900 dark:to-transparent"></div>
         </div>
 
         {/* Floating Elements */}
-        <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="fixed inset-0 -z-5 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gray-200 bg-opacity-30 rounded-full blur-[128px] animate-pulse dark:bg-gray-700 dark:bg-opacity-30"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gray-300 bg-opacity-30 rounded-full blur-[128px] animate-pulse delay-1000 dark:bg-gray-600 dark:bg-opacity-30"></div>
         </div>

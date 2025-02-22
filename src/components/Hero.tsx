@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { containerStyles, textStyles, buttonStyles } from '../styles/design-system';
 import FloatingWhatsApp from './FloatingWhatsApp';

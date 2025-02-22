@@ -1,4 +1,3 @@
-import React from 'react';
 import { notFound } from 'next/navigation';
 import BlogPost from '@/components/BlogPost';
 import { blogPosts } from '@/data/blog';

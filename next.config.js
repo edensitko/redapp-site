@@ -68,8 +68,21 @@ const nextConfig = {
       };
     }
 
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    // Handle framer-motion
+    config.module.rules.push({
+      test: /framer-motion/,
+      sideEffects: false
+    });
+
     return config;
   },
+  // Transpile framer-motion
+  transpilePackages: ['framer-motion'],
   // Reduce memory usage during builds
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer

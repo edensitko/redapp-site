@@ -1,46 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   reactStrictMode: true,
   images: {
-    unoptimized: true,
     domains: [
-      'redapp.co.il', 
-      'red-softwares.com', 
+      'redapp.co.il',
       'images.unsplash.com',
       'plus.unsplash.com',
       'img.freepik.com',
-      'images.pexels.com'
+      'images.pexels.com',
+      'placehold.co'
     ],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
+        hostname: '**',
       },
-      {
-        protocol: 'https',
-        hostname: '**.unsplash.com'
-      },
-      {
-        protocol: 'https',
-        hostname: '**.freepik.com'
-      },
-      {
-        protocol: 'https',
-        hostname: '**.pexels.com'
-      }
     ],
-    minimumCacheTTL: 60,
-    deviceSizes: [640, 750, 828, 1080, 1200],
-    imageSizes: [16, 32, 48, 64, 96],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['react-icons'],
   },
   webpack: (config, { dev, isServer }) => {
     // Production optimizations
@@ -68,22 +46,29 @@ const nextConfig = {
       };
     }
 
+    // Add SVGR support
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
 
-    // Handle framer-motion
+    // Add support for other file types if needed
     config.module.rules.push({
-      test: /framer-motion/,
-      sideEffects: false
+      test: /\.(pdf|doc|docx|xls|xlsx|txt|webp)$/,
+      use: ['file-loader'],
     });
+
+    config.externals = [...(config.externals || []), 'canvas', 'jsdom'];
 
     return config;
   },
-  // Transpile framer-motion
-  transpilePackages: ['framer-motion'],
-  // Reduce memory usage during builds
+  // Transpile framer-motion and other packages
+  transpilePackages: ['framer-motion', 'react-icons'],
+  // Experimental features
+  experimental: {
+    optimizeCss: true,
+    scrollRestoration: true,
+  },
   onDemandEntries: {
     // period (in ms) where the server will keep pages in the buffer
     maxInactiveAge: 15 * 1000,

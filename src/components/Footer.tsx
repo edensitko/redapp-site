@@ -139,8 +139,8 @@ const Footer = () => {
               </p>
               <p className="flex items-center">
                 <span className="font-medium">אימייל:</span>
-                <a href="mailto:contact@red-softwares.com" className="mr-2 hover:text-primary-500 dark:hover:text-primary-400">
-                  contact@red-softwares.com
+                <a href="mailto:contact@redapp.com" className="mr-2 hover:text-primary-500 dark:hover:text-primary-400">
+                  contact@redapp.com
                 </a>
               </p>
               <p className="flex items-center">

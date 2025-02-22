@@ -2,29 +2,29 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <!-- Add the static pages -->
       <url>
-        <loc>https://red-website-d46b9.web.app</loc>
-        <lastmod>2025-02-12T16:06:45.155Z</lastmod>
+        <loc>https://redapp.co.il</loc>
+        <lastmod>2025-02-22T16:40:55.000Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
       </url>
       <url>
-        <loc>https://red-website-d46b9.web.app/blog</loc>
-        <lastmod>2025-02-12T16:06:45.157Z</lastmod>
+        <loc>https://redapp.co.il/blog</loc>
+        <lastmod>2025-02-22T16:40:55.000Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
       </url>
       <!-- Add the blog posts -->
       
             <url>
-              <loc>https://red-website-d46b9.web.app/blog/modern-web-development</loc>
-              <lastmod>2025-02-12T16:06:45.157Z</lastmod>
+              <loc>https://redapp.co.il/blog/modern-web-development</loc>
+              <lastmod>2025-02-22T16:40:55.000Z</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.7</priority>
             </url>
           
             <url>
-              <loc>https://red-website-d46b9.web.app/blog/cybersecurity-digital-age</loc>
-              <lastmod>2025-02-12T16:06:45.157Z</lastmod>
+              <loc>https://redapp.co.il/blog/cybersecurity-digital-age</loc>
+              <lastmod>2025-02-22T16:40:55.000Z</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.7</priority>
             </url>

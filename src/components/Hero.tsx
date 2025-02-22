@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { containerStyles, textStyles, buttonStyles } from '../styles/design-system';
-import FloatingWhatsApp from './FloatingWhatsApp';
 import LoadingScreen from './LoadingScreen';
 
 const Hero: React.FC = () => {
@@ -106,7 +105,6 @@ const Hero: React.FC = () => {
       
           {/* WhatsApp Button */}
           <div className="mt-8 flex justify-center">
-            <FloatingWhatsApp />
           </div>
         </motion.div>
       </div>

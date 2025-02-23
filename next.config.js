@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   reactStrictMode: true,
   images: {
     domains: [
-      'redapp.co.il',
       'images.unsplash.com',
       'plus.unsplash.com',
       'img.freepik.com',
       'images.pexels.com',
-      'placehold.co'
+      'placehold.co',
+      'redapp.co.il',
     ],
     remotePatterns: [
       {
@@ -16,6 +17,7 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+    unoptimized: true,
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
@@ -50,12 +52,6 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
-    });
-
-    // Add support for other file types if needed
-    config.module.rules.push({
-      test: /\.(pdf|doc|docx|xls|xlsx|txt|webp)$/,
-      use: ['file-loader'],
     });
 
     config.externals = [...(config.externals || []), 'canvas', 'jsdom'];

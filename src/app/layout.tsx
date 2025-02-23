@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import FloatingSocialMenu from '@/components/FloatingWhatsApp';
 import Providers from './providers';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
+          <GoogleAnalytics />
           <Navbar />
           <main>{children}</main>
           <FloatingSocialMenu />

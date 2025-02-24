@@ -1,36 +1,37 @@
 'use client';
 
+import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import CallToAction from '@/components/CallToAction';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import Process from '@/components/Process';
-import Projects from '@/components/Projects';
-import HomeBlog from '@/components/HomeBlog';
-import FAQ from '@/components/FAQ';
-import Contact from '@/components/Contact';
-import Pricing from '@/components/Pricing';
-import Testimonials from '@/components/Testimonials';
+import LoadingScreen from '@/components/LoadingScreen';
 
-// Dynamic imports for better performance
-const Hero = dynamic(() => import('@/components/Hero'), {
-  ssr: true
-});
+const Hero = dynamic(() => import('@/components/Hero'), { ssr: true });
+const About = dynamic(() => import('@/components/About'), { ssr: true });
+const Services = dynamic(() => import('@/components/Services'), { ssr: true });
+const Process = dynamic(() => import('@/components/Process'), { ssr: true });
+const Projects = dynamic(() => import('@/components/Projects'), { ssr: true });
+const HomeBlog = dynamic(() => import('@/components/HomeBlog'), { ssr: true });
+const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: true });
+const Contact = dynamic(() => import('@/components/Contact'), { ssr: true });
+const Pricing = dynamic(() => import('@/components/Pricing'), { ssr: true });
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: true });
+const CallToAction = dynamic(() => import('@/components/CallToAction'), { ssr: true });
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      <Hero />
-      <About />
-      <Services />
-      <Process />
-      <Projects />
-      <HomeBlog />
-      <FAQ />
-      <Pricing />
-      <Testimonials />
-      <Contact />
-      <CallToAction />
+      <Suspense fallback={<LoadingScreen />}>
+        <Hero />
+        <CallToAction />
+        <About />
+        <Services />
+        <Process />
+        <Projects />
+        <HomeBlog />
+        <FAQ />
+        <Pricing />
+        <Testimonials />
+        <Contact />
+      </Suspense>
     </div>
   );
 }

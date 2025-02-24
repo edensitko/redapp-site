@@ -3,68 +3,91 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import FloatingSocialMenu from '@/components/FloatingWhatsApp';
 import Providers from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import JsonLd from '@/components/JsonLd';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'RedApp - פיתוח אפליקציות ואתרים',
-  description: 'פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות',
-  manifest: '/manifest.json',
-  metadataBase: new URL('https://redapp.co.il'),
-  alternates: {
-    canonical: '/',
+  title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
+  description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
+  keywords: 'פיתוח אפליקציות, פיתוח אתרים, פיתוח אפליקציות לאנדרואיד, פיתוח אפליקציות לאייפון, פיתוח מערכות מידע, פיתוח תוכנה',
+  authors: [{ name: 'רדאפ' }],
+  creator: 'רדאפ',
+  publisher: 'רדאפ',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   verification: {
-    google: 'NvO2jxOAdcFONxOWB3-YerlG9IfXFYGKlb95c0ctY68',
+    google: 'google',
+    yandex: 'yandex',
+    yahoo: 'yahoo',
+    other: {
+      me: ['my-email', 'my-link'],
+    },
   },
-  authors: [{ name: 'RedApp' }],
-  creator: 'RedApp',
-  publisher: 'RedApp',
-  keywords: [
-    'RedApp',
-    'red app ',
-    'רד אפ',
-    'רדאפ',
-    'פיתוח אפליקציות', 
-    'פיתוח אתרים', 'אפליקציות',
-     'אתרים', 'פיתוח תוכנה', 'עיצוב אתרים', 
-     'בניית אתרים'],
   openGraph: {
-    title: 'RedApp - פיתוח אפליקציות ואתרים',
-    description: 'פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות',
+    title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
+    description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
     url: 'https://redapp.co.il',
-    siteName: 'RedApp',
+    siteName: 'רדאפ',
+    images: [
+      {
+        url: '/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'רדאפ Logo',
+      },
+    ],
     locale: 'he_IL',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'RedApp - פיתוח אפליקציות ואתרים',
-    description: 'פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות',
+    title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
+    description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
+    creator: '@redapp',
+    images: ['/logo.png'],
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
-      follow: true,
+      follow: false,
+      noimageindex: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/logo.s.png', sizes: '16x16', type: 'image/png' },
+      { url: '/logo.s.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo.s.png', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/logo.s.png' },
+    ],
+    shortcut: ['/logo.s.png'],
+  },
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: '#000000',
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -75,26 +98,11 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function() {
-                  navigator.serviceWorker.register('/sw.js').then(
-                    function(registration) {
-                      console.log('ServiceWorker registration successful');
-                    },
-                    function(err) {
-                      console.log('ServiceWorker registration failed: ', err);
-                    }
-                  );
-                });
-              }
-            `,
-          }}
-        />
+        <link rel="icon" href="/logo.s.png" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo.s.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/logo.s.png" />
+        <link rel="apple-touch-icon" href="/logo.s.png" />
+        <link rel="shortcut icon" href="/logo.s.png" />
       </head>
       <body className={inter.className}>
         <Providers>
@@ -102,7 +110,7 @@ export default function RootLayout({
           <JsonLd />
           <Navbar />
           <main>{children}</main>
-          <FloatingSocialMenu />
+          <FloatingWhatsApp />
           <Footer />
         </Providers>
       </body>

@@ -20,7 +20,6 @@ const CallToAction: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Add your form submission logic here
-    console.log('Form submitted:', formData);
   };
 
   return (

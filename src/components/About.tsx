@@ -110,8 +110,9 @@ const About: React.FC = () => {
               <Image
                 src="/logo.png"
                 alt="RedApp Logo"
-                fill
-                className="object-contain p-6"
+                width={400}
+                height={400}
+                className="object-contain w-auto h-auto"
                 priority
               />
             </div>

@@ -67,9 +67,10 @@ const Footer = () => {
               <Image 
                 src="/logo.png" 
                 alt="Redapp Logo" 
-                width={40} 
-                height={40}
-                className="w-20 h-10"
+                width={200}
+                height={200}
+                className="object-contain w-auto h-auto"
+                priority
               />
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mr-3"></h3>
             </div>

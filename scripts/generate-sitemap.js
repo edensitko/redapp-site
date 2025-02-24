@@ -55,4 +55,3 @@ if (!fs.existsSync(outPath)) {
 }
 
 fs.writeFileSync(path.join(outPath, 'sitemap.xml'), sitemap);
-console.log('Sitemap generated successfully in out directory!');

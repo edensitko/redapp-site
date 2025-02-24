@@ -57,7 +57,6 @@ const VideoSection: React.FC<VideoSectionProps> = ({ videoSrc }) => {
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
-        console.log('Video autoplay failed:', error);
       });
     }
   }, [videoSrc]);

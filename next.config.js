@@ -3,20 +3,7 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   images: {
-    domains: [
-      'images.unsplash.com',
-      'plus.unsplash.com',
-      'img.freepik.com',
-      'images.pexels.com',
-      'placehold.co',
-      'redapp.co.il',
-    ],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -30,6 +17,7 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['framer-motion', 'react-icons'],
+    scrollRestoration: true,
   },
   webpack: (config, { dev, isServer }) => {
     // Optimize CSS

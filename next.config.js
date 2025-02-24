@@ -17,21 +17,32 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
+  compress: true,
+  poweredByHeader: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['framer-motion', 'react-icons'],
+  },
   webpack: (config, { dev, isServer }) => {
-    // Production optimizations
-    if (!dev) {
+    // Optimize CSS
+    if (!dev && !isServer) {
       config.optimization = {
         ...config.optimization,
-        minimize: true,
         splitChunks: {
           chunks: 'all',
           minSize: 20000,
-          maxSize: 90000,
+          maxSize: 244000,
+          minChunks: 1,
+          maxAsyncRequests: 30,
+          maxInitialRequests: 30,
           cacheGroups: {
             defaultVendors: {
               test: /[\\/]node_modules[\\/]/,
@@ -47,29 +58,7 @@ const nextConfig = {
         },
       };
     }
-
-    // Add SVGR support
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
-    config.externals = [...(config.externals || []), 'canvas', 'jsdom'];
-
     return config;
-  },
-  // Transpile framer-motion and other packages
-  transpilePackages: ['framer-motion', 'react-icons'],
-  // Experimental features
-  experimental: {
-    optimizeCss: true,
-    scrollRestoration: true,
-  },
-  onDemandEntries: {
-    // period (in ms) where the server will keep pages in the buffer
-    maxInactiveAge: 15 * 1000,
-    // number of pages that should be kept simultaneously without being disposed
-    pagesBufferLength: 2,
   },
 }
 

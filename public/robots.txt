@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://red-website-d46b9.web.app
+Host: https://redapp.co.il
 
 # Sitemaps
-Sitemap: https://red-website-d46b9.web.app/sitemap.xml
+Sitemap: https://redapp.co.il/sitemap.xml

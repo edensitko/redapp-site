@@ -137,7 +137,6 @@ export const metadata: Metadata = {
   applicationName: 'RedApp',
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
-  colorScheme: 'light dark',
   other: {
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
@@ -153,6 +152,7 @@ export const viewport: Viewport = {
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
+  colorScheme: 'light dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,

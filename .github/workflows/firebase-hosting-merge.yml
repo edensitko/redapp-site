@@ -22,4 +22,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_REDAPP_SITE }}'
           channelId: live
-          projectId: redapp-site
+          projectId: redapp-d476a

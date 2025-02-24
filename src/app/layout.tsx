@@ -138,6 +138,7 @@ export const metadata: Metadata = {
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
   other: {
+    'mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-capable': 'yes',
     'apple-mobile-web-app-status-bar-style': 'black-translucent',
     'apple-mobile-web-app-title': 'RedApp',
@@ -156,8 +157,9 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
+  viewportFit: 'cover',
+  userScalable: false,
 };
-
 export default function RootLayout({
   children,
 }: {
@@ -166,11 +168,16 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
       <head>
+        {/* Remove any preload for Google Analytics */}
         <link rel="icon" href="/logo.s.png" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.s.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.s.png" />
-        <link rel="apple-touch-icon" href="/logo.s.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/logo.s.png" />
         <link rel="shortcut icon" href="/logo.s.png" />
+        <script 
+          async 
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+        />
       </head>
       <body className={inter.className}>
         <Providers>

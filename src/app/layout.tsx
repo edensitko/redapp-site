@@ -11,12 +11,16 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://redapp.co.il'),
   title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
-  description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
-  keywords: 'פיתוח אפליקציות, פיתוח אתרים, פיתוח אפליקציות לאנדרואיד, פיתוח אפליקציות לאייפון, פיתוח מערכות מידע, פיתוח תוכנה',
+  description: 'רדאפ - חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
+  keywords: ['רדאפ', 'redapp', 'רד אפ', 'red app', 'פיתוח אפליקציות', 'פיתוח אתרים', 'פיתוח אפליקציות לאנדרואיד', 'פיתוח אפליקציות לאייפון', 'פיתוח מערכות מידע', 'פיתוח תוכנה'],
   authors: [{ name: 'רדאפ' }],
   creator: 'רדאפ',
   publisher: 'רדאפ',
+  alternates: {
+    canonical: 'https://redapp.co.il',
+  },
   formatDetection: {
     email: false,
     address: false,
@@ -32,7 +36,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
-    description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
+    description: 'רדאפ - חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
     url: 'https://redapp.co.il',
     siteName: 'רדאפ',
     images: [
@@ -49,18 +53,16 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'רדאפ - RedApp פיתוח אפליקציות ואתרים',
-    description: 'חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
+    description: 'רדאפ - חברת פיתוח אפליקציות ואתרים מובילה בישראל. אנו מתמחים בפיתוח אפליקציות לאנדרואיד ואייפון, אתרי אינטרנט ומערכות מידע.',
     creator: '@redapp',
     images: ['/logo.png'],
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
-      follow: false,
-      noimageindex: true,
+      follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,

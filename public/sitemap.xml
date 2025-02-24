@@ -1,32 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <!-- Add the static pages -->
-      <url>
-        <loc>https://redapp.co.il</loc>
-        <lastmod>2025-02-22T16:40:55.000Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-      </url>
-      <url>
-        <loc>https://redapp.co.il/blog</loc>
-        <lastmod>2025-02-22T16:40:55.000Z</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-      </url>
-      <!-- Add the blog posts -->
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+            xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      <!-- Static pages -->
       
             <url>
-              <loc>https://redapp.co.il/blog/modern-web-development</loc>
-              <lastmod>2025-02-22T16:40:55.000Z</lastmod>
-              <changefreq>weekly</changefreq>
-              <priority>0.7</priority>
+              <loc>https://redapp.co.il</loc>
+              <lastmod>2025-02-24T12:59:36.484Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il"
+              />
             </url>
           
             <url>
-              <loc>https://redapp.co.il/blog/cybersecurity-digital-age</loc>
-              <lastmod>2025-02-22T16:40:55.000Z</lastmod>
+              <loc>https://redapp.co.il/about</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/about"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/projects</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/projects"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/blog</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/blog"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/contact</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/contact"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/pricing</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.8</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/pricing"
+              />
+            </url>
+          
+      
+      <!-- Services pages -->
+      
+            <url>
+              <loc>https://redapp.co.il/services/web-development</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/web-development"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services/mobile-development</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/mobile-development"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services/digital-marketing</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/digital-marketing"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services/ui-ux-design</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/ui-ux-design"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services/cloud-solutions</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/cloud-solutions"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/services/consulting</loc>
+              <lastmod>2025-02-24T12:59:36.487Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/services/consulting"
+              />
+            </url>
+          
+
+      <!-- Blog posts -->
+      
+            <url>
+              <loc>https://redapp.co.il/blog/web-design-trends-2024</loc>
+              <lastmod>2025-02-24T12:59:36.488Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.6</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/blog/web-design-trends-2024"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/blog/seo-optimization-guide</loc>
+              <lastmod>2025-02-24T12:59:36.488Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.6</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/blog/seo-optimization-guide"
+              />
+            </url>
+          
+            <url>
+              <loc>https://redapp.co.il/blog/react-performance-tips</loc>
+              <lastmod>2025-02-24T12:59:36.488Z</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.6</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="https://redapp.co.il/blog/react-performance-tips"
+              />
             </url>
           
     </urlset>

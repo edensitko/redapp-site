@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaRocket, FaCode, FaLaptopCode, FaCheckCircle } from 'react-icons/fa';
 
@@ -34,7 +35,7 @@ const Process: React.FC = () => {
     <section className="relative py-20 overflow-hidden" dir="rtl" id="process">
       {/* Grid Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]" />
       </div>
 
       {/* Abstract Shapes */}
@@ -50,9 +51,9 @@ const Process: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="inline-block px-6 py-2 mb-6 rounded-full 
-                     bg-white dark:bg-[rgb(36,37,37)]
-                     border border-gray-200 dark:border-[rgb(46,47,47)]
-                     transition-shadow"
+                       bg-white dark:bg-[rgb(36,37,37)]
+                       border border-gray-200 dark:border-[rgb(46,47,47)]
+                       transition-shadow"
           >
             <span className="text-lg font-medium bg-gradient-to-r from-primary-600 to-red-500 bg-clip-text text-transparent">
               תהליך העבודה
@@ -70,54 +71,56 @@ const Process: React.FC = () => {
         {/* Process Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative group"
-            >
-              <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 border border-gray-100 dark:border-[rgb(46,47,47)] relative 
-                          transition-all duration-300 group-hover:-translate-y-1">
-                {/* Gradient Background */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
-                
-                {/* Icon Container */}
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-primary-500 text-white flex items-center justify-center mb-6 
-                               transform transition-transform duration-300 group-hover:scale-110">
-                    {step.icon}
+            <Link key={index} href="/how-we-work" passHref>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative cursor-pointer"
+              >
+                <div className="bg-white dark:bg-[rgb(36,37,37)] rounded-2xl p-8 border border-gray-100 dark:border-[rgb(46,47,47)]
+                                transition-transform duration-300 group-hover:-translate-y-1 group-hover:shadow-xl">
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`} />
+                  
+                  {/* Icon Container */}
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-xl bg-primary-500 text-white flex items-center justify-center mb-6 
+                                    transform transition-transform duration-300 group-hover:scale-110">
+                      {step.icon}
+                    </div>
+                    <motion.div
+                      animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.6, 0.3],
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className={`absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-br ${step.gradient} rounded-full opacity-20 blur-xl`}
+                    />
                   </div>
-                  <motion.div
-                    animate={{
-                      scale: [1, 1.2, 1],
-                      opacity: [0.3, 0.6, 0.3],
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className={`absolute -bottom-2 -right-2 w-16 h-16 bg-gradient-to-br ${step.gradient} rounded-full opacity-20 blur-xl`}
-                  />
+
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 transition-colors group-hover:text-primary-500 dark:group-hover:text-primary-400">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {step.description}
+                  </p>
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {step.description}
-                </p>
-              </div>
-
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 left-0 w-full">
-                  <div className="h-1 bg-gradient-to-r from-primary-500/20 to-red-500/20 transform -translate-y-1/2 z-0" />
-                  <div className="absolute top-1/2 right-0 w-3 h-3 bg-primary-500/30 rounded-full transform translate-x-1/2 -translate-y-1/2" />
-                </div>
-              )}
-            </motion.div>
+                {/* Optional Connecting Arrow for larger screens */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 left-0 w-full">
+                    <div className="h-1 bg-gradient-to-r from-primary-500/20 to-red-500/20 transform -translate-y-1/2 z-0" />
+                    <div className="absolute top-1/2 right-0 w-3 h-3 bg-primary-500/30 rounded-full transform translate-x-1/2 -translate-y-1/2" />
+                  </div>
+                )}
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

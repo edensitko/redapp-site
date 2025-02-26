@@ -3,6 +3,8 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
+    domains: ['img.icons8.com'],
+
   },
   experimental: {
     scrollRestoration: true

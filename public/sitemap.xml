@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
       <!-- Add the static pages -->
       <url>
         <loc>https://redapp.co.il</loc>
@@ -19,14 +20,14 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
       </url>
-
-          <url>
+ 
+           <url>
         <loc>https://redapp.co.il/contact</loc>
         <lastmod>2025-02-12T16:06:45.157Z</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
       </url>
-          <url>
+           <url>
         <loc>https://redapp.co.il/about</loc>
         <lastmod>2025-02-12T16:06:45.157Z</lastmod>
         <changefreq>daily</changefreq>
@@ -44,8 +45,8 @@
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
       </url>
-
-
+ 
+ 
       <!-- Add the blog posts -->
       
       <url>

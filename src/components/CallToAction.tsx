@@ -29,7 +29,7 @@ const CallToAction: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ef4444_1px,transparent_1px),linear-gradient(to_bottom,#ef4444_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.03]"></div>
       </div>
 
-      <div className="relative z-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-5 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

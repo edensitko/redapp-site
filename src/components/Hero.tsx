@@ -1,19 +1,22 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useViewportScroll, useTransform } from 'framer-motion';
 import { containerStyles, textStyles, buttonStyles } from '../styles/design-system';
 import LoadingScreen from './LoadingScreen';
 
 const Hero: React.FC = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const { scrollY } = useViewportScroll();
+  // Scale from 1 to 1.5 as scrollY goes from 0 to 300 pixels.
+  const titleScale = useTransform(scrollY, [0, 300], [1, 1.5]);
 
   const handleVideoLoad = () => {
     setIsVideoLoaded(true);
   };
 
   return (
-    <div className={`relative w-full h-screen overflow-hidden`} id="home">
+    <div className="relative w-full h-screen overflow-hidden" id="home">
       <AnimatePresence>
         {!isVideoLoaded && <LoadingScreen />}
       </AnimatePresence>
@@ -36,13 +39,14 @@ const Hero: React.FC = () => {
       {/* Content */}
       <div className={containerStyles.mainContent}>
         <motion.div 
-          className="relative flex  z-10 flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8"
+          className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           {/* Main Title */}
           <motion.h1
+            style={{ scale: titleScale }}
             className="text-4xl sm:text-4xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary-600 to-primary-900 dark:from-primary-300 dark:to-primary-500 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,12 +55,12 @@ const Hero: React.FC = () => {
             מובילים את המהפכה הדיגיטלית שלך 
           </motion.h1>
           <motion.h1
-            className="text-2xl sm:text-2xl md:text-2xl  mt-4  text-center font-medium bg-gradient-to-r from-primary-600 to-primary-900 dark:from-primary-200 dark:to-primary-300 text-transparent bg-clip-text"
+            className="text-2xl sm:text-2xl md:text-2xl mt-4 text-center font-medium bg-gradient-to-r from-primary-600 to-primary-900 dark:from-primary-200 dark:to-primary-300 text-transparent bg-clip-text"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-             פיתוח בסטנדרט חדש
+            פיתוח בסטנדרט חדש
           </motion.h1>
           {/* Subtitle */}
           <motion.div 
@@ -65,8 +69,8 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-          
             <p className={`${textStyles.accentText} text-gray-700 dark:text-gray-300`}>
+              {/* Additional subtitle text if needed */}
             </p>
           </motion.div>
 
@@ -105,12 +109,12 @@ const Hero: React.FC = () => {
       
           {/* WhatsApp Button */}
           <div className="mt-8 flex justify-center">
+            {/* WhatsApp button content if needed */}
           </div>
         </motion.div>
       </div>
-      {/* make layer shadow full width  gradiend from button to top with theme bg */}
-      <div className="absolute top-0 left-0 right-0 h-full z-1 bg-gradient-to-t from-white/100 via-white/60 to-transparent dark:from-[#1e1e1e]/90 dark:via-[#1e1e1e]/90 dark:to-transparent"></div>
-
+      {/* Layer shadow full width gradient */}
+      <div className="absolute top-0 left-0 right-0 h-full z-1 bg-gradient-to-t from-white/100 via-white/60 to-transparent dark:from-[#121213]/100 dark:via-[#1e1e1e]/60 dark:to-transparent"></div>
     </div>
   );
 };

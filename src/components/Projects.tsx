@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
 import { textStyles, animationVariants } from '../styles/design-system';
 import Image from 'next/image';
 import ScrollCircle from './ScrollCircle';
-
+import { useRouter } from 'next/navigation';
 const projects = [
   {
     title: 'פלטפורמת מסחר אלקטרוני',
@@ -72,6 +72,8 @@ const Projects: React.FC = () => {
   const filteredProjects = projects.filter(
     project => selectedCategory === 'הכל' || project.category === selectedCategory
   );
+
+  const router = useRouter();
 
   return (
     <section className="relative overflow-hidden" dir="rtl" id="projects">
@@ -213,13 +215,16 @@ const Projects: React.FC = () => {
           {/* Load More Button */}
           <div className="text-center mt-12">
             <button
-              onClick={() => {}}
+onClick={() => {
+  router.push('/projects');
+}}
               className="inline-flex items-center px-6 py-3 rounded-xl font-medium
                        bg-gradient-to-r from-primary-500 to-primary-600 text-white
                        hover:from-primary-600 hover:to-primary-700
                        transition-all duration-300"
             >
               <span className="ml-2">טען עוד פרויקטים</span>
+           
             </button>
           </div>
         </motion.div>

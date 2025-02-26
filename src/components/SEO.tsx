@@ -15,10 +15,12 @@ const SEO: FC<SEOProps> = ({
   title = 'רדאפ RedApp - פתרונות טכנולוגיים',
   description = 'בית תוכנה המוביל בישראל לפיתוח פתרונות דיגיטליים מתקדמים. אנחנו מספקים שירותי פיתוח תוכנה, עיצוב UI/UX, ופתרונות טכנולוגיים מותאמים אישית לצרכי העסק שלך. צוות המומחים שלנו מלווה אותך מהרעיון ועד ליישום.',
   image = '/logo.png',
-  url = 'https://red-softwares.com',
+  url = 'https://redapp.co.il',
   type = 'website',
   locale = 'he_IL',
   keywords = [
+    'רד אפ',
+    'רדאפ',
     'redapp',
     'red app',
     'פיתוח אפליקציות',

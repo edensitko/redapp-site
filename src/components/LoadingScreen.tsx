@@ -13,9 +13,10 @@ const LoadingScreen: React.FC = () => {
         <Image
           src="/logo.png"
           alt="Logo"
-          layout="fill"
-          objectFit="contain"
-          className="animate-pulse"
+          width={128}
+          height={128}
+          className="animate-pulse object-contain w-auto h-auto"
+          priority
         />
       </div>
     </motion.div>

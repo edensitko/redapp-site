@@ -7,10 +7,6 @@ import Link from 'next/link';
 import { FaSun, FaMoon } from 'react-icons/fa';
 import { useTheme } from 'next-themes';
 
-interface NavbarProps {
-  scrolled?: boolean;
-}
-
 const navLinks = [
   { name: 'בית', href: '/', label: 'בית' },
   { name: 'שירותים', href: '/services', label: 'שירותים' },
@@ -20,21 +16,24 @@ const navLinks = [
   { name: 'צור קשר', href: '/contact', label: 'צור קשר' },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
+export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => {
-      scrolled = window.scrollY > 20;
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <motion.div 
@@ -52,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
         dir="rtl"
       >
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between ">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex-shrink-0">
               <Link href="/">
@@ -92,13 +91,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
             </div>
 
             {/* Right Side Actions */}
-            <div className="flex items-center  w-34 justify-end">
+            <div className="flex items-center w-34 justify-end">
               {/* Call to Action Button */}
               <Link 
                 href="/contact"
                 className="hidden md:inline-flex items-center px-2.5 py-2 m-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors duration-200 gap-2"
               >
-בואו נדבר      </Link>
+                בואו נדבר
+              </Link>
 
               {/* Theme Toggle Button */}
               <button
@@ -161,6 +161,4 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled = false }) => {
       </nav>
     </motion.div>
   );
-};
-
-export default Navbar;
+}

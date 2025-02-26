@@ -81,8 +81,8 @@ const ContactForm = () => {
     {
       icon: <FaEnvelope className="text-primary-500" />,
       title: 'אימייל',
-      content: 'contact@red-softwares.com',
-      href: 'mailto:contact@red-softwares.com'
+      content: 'contact@redapp.com',
+      href: 'mailto:contact@redapp.com'
     },
     {
       icon: <FaMapMarkerAlt className="text-primary-500" />,

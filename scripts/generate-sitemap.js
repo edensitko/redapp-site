@@ -1,43 +1,92 @@
 const fs = require('fs');
 const path = require('path');
 
-const EXTERNAL_DATA_URL = 'https://red-website-d46b9.web.app';
+const EXTERNAL_DATA_URL = 'https://redapp.co.il';
 
-// Sample blog posts - in a real application, you would get this from your data source
+// All static pages
+const staticPages = [
+  '',
+  '/about',
+  '/services',
+  '/projects',
+  '/blog',
+  '/contact',
+  '/pricing',
+];
+
+// Services pages
+const services = [
+  'web-development',
+  'mobile-development',
+  'digital-marketing',
+  'ui-ux-design',
+  'cloud-solutions',
+  'consulting',
+];
+
+// Blog posts
 const posts = [
-  {
-    slug: 'modern-web-development',
-  },
-  {
-    slug: 'cybersecurity-digital-age',
-  }
+  'web-design-trends-2024',
+  'seo-optimization-guide',
+  'react-performance-tips',
 ];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-      <!-- Add the static pages -->
-      <url>
-        <loc>${EXTERNAL_DATA_URL}</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-      </url>
-      <url>
-        <loc>${EXTERNAL_DATA_URL}/blog</loc>
-        <lastmod>${new Date().toISOString()}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-      </url>
-      <!-- Add the blog posts -->
-      ${posts
-        .map(({ slug }) => {
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+            xmlns:xhtml="http://www.w3.org/1999/xhtml">
+      <!-- Static pages -->
+      ${staticPages
+        .map(page => {
           return `
             <url>
-              <loc>${`${EXTERNAL_DATA_URL}/blog/${slug}`}</loc>
+              <loc>${EXTERNAL_DATA_URL}${page}</loc>
+              <lastmod>${new Date().toISOString()}</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>${page === '' ? '1.0' : '0.8'}</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="${EXTERNAL_DATA_URL}${page}"
+              />
+            </url>
+          `;
+        })
+        .join('')}
+      
+      <!-- Services pages -->
+      ${services
+        .map(service => {
+          return `
+            <url>
+              <loc>${EXTERNAL_DATA_URL}/services/${service}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.7</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="${EXTERNAL_DATA_URL}/services/${service}"
+              />
+            </url>
+          `;
+        })
+        .join('')}
+
+      <!-- Blog posts -->
+      ${posts
+        .map(slug => {
+          return `
+            <url>
+              <loc>${EXTERNAL_DATA_URL}/blog/${slug}</loc>
+              <lastmod>${new Date().toISOString()}</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>0.6</priority>
+              <xhtml:link 
+                rel="alternate" 
+                hreflang="he" 
+                href="${EXTERNAL_DATA_URL}/blog/${slug}"
+              />
             </url>
           `;
         })
@@ -45,14 +94,11 @@ function generateSiteMap() {
     </urlset>`;
 }
 
-// Generate sitemap and save it to the out directory
+// Generate sitemap
 const sitemap = generateSiteMap();
-const outPath = path.join(process.cwd(), 'out');
 
-// Create out directory if it doesn't exist
-if (!fs.existsSync(outPath)) {
-  fs.mkdirSync(outPath, { recursive: true });
-}
-
-fs.writeFileSync(path.join(outPath, 'sitemap.xml'), sitemap);
-console.log('Sitemap generated successfully in out directory!');
+// Write sitemap to public directory
+fs.writeFileSync(
+  path.join(process.cwd(), 'public', 'sitemap.xml'),
+  sitemap.trim()
+);

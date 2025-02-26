@@ -8,8 +8,8 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'RedApp - פיתוח אפליקציות ואתרים',
-  description: 'פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות',
+  title: 'RedApp - רדאפ פיתוח אפליקציות ואתרים',
+  description: 'רדאפ - פיתוח אפליקציות ואתרים מותאמים אישית עם טכנולוגיות מתקדמות', 
 };
 
 export const viewport: Viewport = {

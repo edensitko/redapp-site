@@ -11,5 +11,35 @@ const LottieIcon = () => {
     />
   );
 };
+const LottieIcon2 = () => {
+  return (
+    <DotLottieReact
+      src="https://lottie.host/7e09ba69-0882-4396-9f22-c6a89eadcece/VGW3XIhKqX.lottie"
+      loop
+      autoplay
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+};
+const LottieIcon3 = () => {
+  return (
+    <DotLottieReact
+      src="https://lottie.host/7e09ba69-0882-4396-9f22-c6a89eadcece/VGW3XIhKqX.lottie"
+      loop
+      autoplay
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+};
+const LottieIcon4 = () => {
+  return (
+    <DotLottieReact
+      src="https://lottie.host/7e09ba69-0882-4396-9f22-c6a89eadcece/VGW3XIhKqX.lottie"
+      loop
+      autoplay
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+};
 
-export default LottieIcon;
+export { LottieIcon, LottieIcon2, LottieIcon3, LottieIcon4 };

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const LOGO_PATH = path.join(process.cwd(), 'public', 'logo.png');
+
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
 
 async function generateAssets() {
@@ -11,16 +12,18 @@ async function generateAssets() {
     console.error('Source logo.png not found in public directory');
     process.exit(1);
   }
+  await sharp(LOGO_PATH)
+  .resize(16, 16)
+  .toFile(path.join(PUBLIC_DIR, 'favicon.ico'));
 
   // Generate favicons
   await sharp(LOGO_PATH)
     .resize(16, 16)
     .toFile(path.join(PUBLIC_DIR, 'favicon-16x16.png'));
 
-  await sharp(LOGO_PATH)
+    await sharp(LOGO_PATH)
     .resize(32, 32)
-    .toFile(path.join(PUBLIC_DIR, 'favicon-32x32.png'));
-
+    .toFile(path.join(PUBLIC_DIR, 'favicon-32x32.ico'))
   await sharp(LOGO_PATH)
     .resize(180, 180)
     .toFile(path.join(PUBLIC_DIR, 'apple-touch-icon.png'));

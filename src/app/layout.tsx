@@ -67,18 +67,18 @@ export const metadata: Metadata = {
     siteName: 'רדאפ - RedApp',
     images: [
       {
-        url: 'https://redapp.co.il/og-image.jpg',
+        url: 'https://redapp.co.il/logo.s.png',
         width: 1200,
         height: 630,
         alt: 'רדאפ - RedApp Development',
-        type: 'image/jpeg',
+        type: 'image/png',
       },
       {
-        url: 'https://redapp.co.il/og-image-square.jpg',
+        url: 'https://redapp.co.il/logo.s.png',
         width: 600,
         height: 600,
         alt: 'רדאפ - RedApp Logo',
-        type: 'image/jpeg',
+        type: 'image/png',
       }
     ],
     locale: 'he_IL',
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.ico', sizes: 'any', type: 'image/png' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
